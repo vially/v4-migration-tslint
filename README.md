@@ -22,5 +22,5 @@ Rules without an **author** and without green checkmarks need some help! See [#c
 
 TODO
 
-[circle-badge]: https://circleci.com/gh/ionic-team/starters.svg?style=shield
-[circle-badge-url]: https://circleci.com/gh/ionic-team/starters
+[circle-badge]: https://circleci.com/gh/ionic-team/v4-migration-tslint.svg?style=shield
+[circle-badge-url]: https://circleci.com/gh/ionic-team/v4-migration-tslint
