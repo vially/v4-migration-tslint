@@ -22,7 +22,8 @@
     "tsc": "tsc",
     "tsc:watch": "tsc --w",
     "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "precommit": "npm run lint && npm run format:check"
   },
   "repository": {
     "type": "git",
@@ -43,26 +44,29 @@
     "@types/sprintf-js": "^1.1.0",
     "chai": "^4.1.2",
     "codelyzer": "^4.3.0",
+    "husky": "^0.14.3",
     "mocha": "^5.1.1",
     "path": "^0.12.7",
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
+    "semantic-release": "^15.1.8",
+    "travis-deploy-once": "^5.0.0",
     "ts-node": "^6.0.1",
     "tslint": "^5.0.0",
-    "typescript": "^2.7.2",
-    "semantic-release": "^15.1.8",
-    "travis-deploy-once": "^5.0.0"
+    "typescript": "^2.7.2"
   },
   "peerDependencies": {
     "tslint": "^5.9.1"
   },
   "release": {
-    "publish": [{
-      "path": "@semantic-release/npm",
-      "npmPublish": true,
-      "pkgRoot": "./dist"
-    }]
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true,
+        "pkgRoot": "./dist"
+      }
+    ]
   }
 }
