@@ -11,7 +11,7 @@
     "lint": "tslint -c tslint.json \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
     "release": "set BUILD_TYPE=prod && npm run build && rimraf dist && tsc -p tsconfig-release.json && npm run copy:common && npm run prepare:package && npm run set:vars",
-    "build": "rimraf dist && tsc && npm run lint && npm t",
+    "build": "rimraf dist && tsc && npm run format:check && npm run lint && npm t",
     "copy:common": "cp README.md dist",
     "prepare:package": "cat package.json | ts-node build/package.ts > dist/package.json",
     "test": "rimraf dist && tsc && mocha dist/test --recursive",
@@ -59,10 +59,12 @@
     "tslint": "^5.9.1"
   },
   "release": {
-    "publish": [{
-      "path": "@semantic-release/npm",
-      "npmPublish": true,
-      "pkgRoot": "./dist"
-    }]
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true,
+        "pkgRoot": "./dist"
+      }
+    ]
   }
 }
