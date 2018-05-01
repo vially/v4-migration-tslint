@@ -1,4 +1,4 @@
-import { assertSuccess, assertAnnotated, assertFailure } from './testhelper';
+import { assertSuccess, assertAnnotated, assertFailure } from './testHelper';
 import { Replacement, RuleFailure } from 'tslint';
 import { expect } from 'chai';
 import { ruleName } from '../src/ionNavbarIsNowIonToolbarRule';
