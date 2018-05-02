@@ -18,7 +18,7 @@
     "test:ci": "rimraf dist && tsc && mocha dist/test --recursive --reporter mocha-junit-reporter",
     "test:live": "concurrently \"tsc -w\" \"mocha dist/test --watch --recursive --inspect\"",
     "test:watch": "rimraf dist && tsc && BUILD_TYPE=dev npm run set:vars && mocha dist/test --watch --recursive",
-    "test:coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "test:coverage": "rimraf coverage && nyc --reporter=lcov --reporter=text-lcov npm test",
     "set:vars": "ts-node build/vars.ts --src ./dist",
     "tscv": "tsc --version",
     "tsc": "tsc",

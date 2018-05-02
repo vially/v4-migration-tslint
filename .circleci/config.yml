@@ -38,7 +38,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace    
-      - run: mkdir ~/junit
+      - run: mkdir junit
       - run: 
           command: npm run test:ci
           environment:
@@ -46,9 +46,10 @@ jobs:
           when: always
       - run: npm run test:coverage
       - store_test_results:
-          path: ~/junit
+          path: junit
       - store_artifacts:
-          path: ~/junit
+          path: junit
+          path: coverage
 
 workflows:
   version: 2
