@@ -15,7 +15,7 @@ class ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker extends Lint.Rul
   //actionControllerVariableName = undefined;
   foundPropertyArray = [];
 
-  // CW: Not sure if we need to track the name of the ActionSheetController variable.
+  // TODO: Not sure if we need to track the name of the ActionSheetController variable.
   // visitConstructorDeclaration(node: ts.ConstructorDeclaration) {
   //   debugger;
   //   for (let element of node.parameters) {
@@ -52,17 +52,16 @@ class ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker extends Lint.Rul
   private tryAddFailure() {
     for (let i = this.foundPropertyArray.length - 1; i >= 0; i--) {
       let argument = this.foundPropertyArray[i];
-      console.log(argument.parentVariableName);
 
-      // CW: Determine if this needs to be added in later.
+      const replacementParam = argument.name.text === 'title' ? 'header' : 'subHeader';
+
+      // TODO: Determine if this needs to be added in later.
       //if (this.actionControllerVariableName && this.actionControllerVariableName === argument.parentVariableName) {
+      const errorMessage = `The ${argument.name.text} field has been replaced by ${replacementParam}.`;
 
-      this.addFailureAt(
-        argument.name.getStart(),
-        argument.name.getWidth(),
-        `The ${argument.name.text} field has been replaced by ${argument.name.text === 'title' ? 'header' : 'subHeader'}.`,
-        [new Replacement(argument.name.getStart(), argument.name.getWidth(), argument.name.text === 'title' ? 'header' : 'subHeader')]
-      );
+      const replacement = new Replacement(argument.name.getStart(), argument.name.getWidth(), replacementParam);
+
+      this.addFailure(this.createFailure(argument.name.getStart(), argument.name.getWidth(), errorMessage, [replacement]));
       this.foundPropertyArray.splice(i, 1);
 
       //}
