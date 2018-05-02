@@ -39,10 +39,10 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace      
       - run: 
-        command: npm run test:build
-        environment:
+          command: npm run test:build
+          environment:
             MOCHA_FILE: junit/test-results.xml
-        when: always
+          when: always
       - run: npm run test:coverage
       - store_test_results:
           path: ~/junit
