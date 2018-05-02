@@ -37,9 +37,17 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: /tmp/workspace
-      - run: npm run test
+          at: /tmp/workspace      
+      - run: 
+        command: npm run test:build
+        environment:
+            MOCHA_FILE: junit/test-results.xml
+        when: always
       - run: npm run test:coverage
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ~/junit
 
 workflows:
   version: 2
