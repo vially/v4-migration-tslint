@@ -40,7 +40,7 @@ jobs:
           at: /tmp/workspace    
       - run: mkdir ~/junit
       - run: 
-          command: npm run test:build
+          command: npm run test:ci
           environment:
             MOCHA_FILE: junit/test-results.xml
           when: always
