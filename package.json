@@ -17,6 +17,7 @@
     "test": "rimraf dist && tsc && mocha dist/test --recursive",
     "test:live": "concurrently \"tsc -w\" \"mocha dist/test --watch --recursive --inspect\"",
     "test:watch": "rimraf dist && tsc && BUILD_TYPE=dev npm run set:vars && mocha dist/test --watch --recursive",
+    "test:coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "set:vars": "ts-node build/vars.ts --src ./dist",
     "tscv": "tsc --version",
     "tsc": "tsc",
@@ -45,6 +46,7 @@
     "codelyzer": "^4.3.0",
     "husky": "^0.14.3",
     "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "path": "^0.12.7",
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
@@ -59,12 +61,13 @@
     "tslint": "^5.9.1"
   },
   "release": {
-    "publish": [
-      {
-        "path": "@semantic-release/npm",
-        "npmPublish": true,
-        "pkgRoot": "./dist"
-      }
-    ]
+    "publish": [{
+      "path": "@semantic-release/npm",
+      "npmPublish": true,
+      "pkgRoot": "./dist"
+    }]
+  },
+  "nyc": {
+    "report-dir": "./coverage"
   }
 }
