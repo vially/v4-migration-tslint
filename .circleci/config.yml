@@ -37,7 +37,8 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: /tmp/workspace      
+          at: /tmp/workspace    
+      - run: mkdir ~/junit
       - run: 
           command: npm run test:build
           environment:
