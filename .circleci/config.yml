@@ -19,7 +19,7 @@ general:
     - "./coverage/"
 
 jobs:
-  build:
+  build_and_test:
     <<: *defaults
     steps:
       - checkout
@@ -29,15 +29,6 @@ jobs:
       - run: npm run lint
       - run: npm run format:check
       - run: npm run build
-      - persist_to_workspace:
-          root: /tmp/workspace
-          paths:
-            - "*"
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: /tmp/workspace    
       - run: mkdir junit
       - run: 
           command: npm run test:ci
@@ -55,9 +46,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - build
-      - test:
-          requires: [build]
+      - build_and_test
       # - deploy:
       #     requires: [test]
       #     filters:
