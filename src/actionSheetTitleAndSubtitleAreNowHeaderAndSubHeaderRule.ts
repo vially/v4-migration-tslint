@@ -6,8 +6,6 @@ export const ruleName = 'action-sheet-title-and-subtitle-are-now-header-and-subh
 
 /**
  * This rule helps with the conversion of the ActionSheetController API.
- * It should be noted that the constructor must be placed above the rest
- * of the methods because it needs to get the variable
  * @class ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker
  * @extends {Lint.RuleWalker}
  */
