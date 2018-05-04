@@ -71,6 +71,9 @@
     }]
   },
   "nyc": {
-    "report-dir": "./coverage"
+    "report-dir": "./coverage",
+    "exclude": [
+      "dist/test/*.js"
+    ]
   }
 }
