@@ -18,6 +18,7 @@ Rules without an **author** and without green checkmarks need some help! See [#c
 
 [ion-navbar-is-now-ion-toolbar]: https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#navbar
 [action-sheet-title-and-subtitle-are-now-header-and-subheader]: https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#action-sheet
+[alert-title-and-subtitle-are-now-header-and-subheader]: https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#alert
 
 ## Contributing Rules
 
