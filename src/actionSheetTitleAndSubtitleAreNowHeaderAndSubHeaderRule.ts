@@ -1,5 +1,5 @@
 import * as Lint from 'tslint';
-import { Replacement } from 'tslint';
+import { IOptions, Replacement } from 'tslint';
 import * as ts from 'typescript';
 
 export const ruleName = 'action-sheet-title-and-subtitle-are-now-header-and-subheader';
@@ -74,9 +74,14 @@ export class Rule extends Lint.Rules.AbstractRule {
     description: 'ActionSheetController now takes in different parameters to its create method.',
     options: null,
     optionsDescription: 'Not configurable.',
-    typescriptOnly: false,
+    typescriptOnly: true,
     hasFix: true
   };
+
+  constructor(options: IOptions) {
+    options.ruleSeverity = 'error';
+    super(options);
+  }
 
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
     return this.applyWithWalker(new ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker(sourceFile, this.getOptions()));
