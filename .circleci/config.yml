@@ -12,7 +12,7 @@ aliases:
 defaults: &defaults
   working_directory: /tmp/workspace
   docker:
-    - image: circleci/node:latest
+    - image: circleci/node:8.11.1
 
 general:
   artifacts:

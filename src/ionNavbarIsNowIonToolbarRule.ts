@@ -2,9 +2,8 @@ import * as ast from '@angular/compiler';
 import { NgWalker } from 'codelyzer/angular/ngWalker';
 import { BasicTemplateAstVisitor } from 'codelyzer/angular/templates/basicTemplateAstVisitor';
 import * as Lint from 'tslint';
+import { IOptions } from 'tslint';
 import * as ts from 'typescript';
-import { Replacement } from 'tslint';
-import { start } from 'repl';
 
 export const ruleName = 'ion-navbar-is-now-ion-toolbar';
 const InvalidSyntaxBoxOpen = '<ion-navbar>';
@@ -93,11 +92,9 @@ export class Rule extends Lint.Rules.AbstractRule {
     hasFix: true
   };
 
-  getOptions() {
-    let options = super.getOptions();
+  constructor(options: IOptions) {
     options.ruleSeverity = 'error';
-
-    return options;
+    super(options);
   }
 
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
