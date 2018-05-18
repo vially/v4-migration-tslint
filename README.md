@@ -11,15 +11,15 @@ An effort to automatically fix syntax changes listed in [BREAKING.md](https://gi
 
 Rules without an **author** and without green checkmarks need some help! See [#contributing-rules](#contributing-rules) to learn how.
 
-| key                                                            | link                                                                          | status                                                   | author                                  |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------- |
-| `action-sheet-title-and-subtitle-are-now-header-and-subheader` | [#action-sheet][action-sheet-title-and-subtitle-are-now-header-and-subheader] | :white_check_mark: tested<br> :white_check_mark: fixable | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-navbar-is-now-ion-toolbar`                                | [#navbar][ion-navbar-is-now-ion-toolbar]                                      | :white_check_mark: tested<br> :white_check_mark: fixable | [@cwoolum](https://github.com/cwoolum/) |
-| `alert-title-and-subtitle-are-now-header-and-subheader`        | [#action-sheet][action-sheet-title-and-subtitle-are-now-header-and-subheader] | :white_check_mark: tested<br> :white_check_mark: fixable | [@cwoolum](https://github.com/cwoolum/) |
-
-[ion-navbar-is-now-ion-toolbar]: https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#navbar
-[action-sheet-title-and-subtitle-are-now-header-and-subheader]: https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#action-sheet
-[alert-title-and-subtitle-are-now-header-and-subheader]: https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#alert
+| key                                                            | link                                                                              | status                                                         | author                                  |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------- |
+| `action-sheet-title-and-subtitle-are-now-header-and-subheader` | [#action-sheet][action-sheet-title-and-subtitle-are-now-header-and-subheader]     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
+| `ion-navbar-is-now-ion-toolbar`                                | [#navbar][ion-navbar-is-now-ion-toolbar]                                          | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
+| `alert-title-and-subtitle-are-now-header-and-subheader`        | [#action-sheet][action-sheet-title-and-subtitle-are-now-header-and-subheader]     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
+| `ion-tab-title-is-now-label`                                   | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs) | :black_square_button: tested<br> :black_square_button: fixable | [@cwoolum](https://github.com/cwoolum/) |
+| `ion-tab-icon-is-now-icon`                                     | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs) | :black_square_button: tested<br> :black_square_button: fixable | [@cwoolum](https://github.com/cwoolum/) |
+| `ion-tab-badge-is-now-badge`                                   | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs) | :black_square_button: tested<br> :black_square_button: fixable | [@cwoolum](https://github.com/cwoolum/) |
+| `ion-tab-badge-style-is-now-badge-style`                       | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs) | :black_square_button: tested<br> :black_square_button: fixable | [@cwoolum](https://github.com/cwoolum/) |
 
 ## Contributing Rules
 
