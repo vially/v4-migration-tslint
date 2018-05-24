@@ -4,26 +4,30 @@ import { BasicTemplateAstVisitor } from 'codelyzer/angular/templates/basicTempla
 import * as Lint from 'tslint';
 import { IOptions } from 'tslint';
 import * as ts from 'typescript';
+import { findTabAttributeMatches } from './helpers/ionTabIelpers';
 
-export const ruleName = 'ion-tab-badge-style-is-now-badge-style';
+export const ruleName = 'ion-tab-badge-is-now-badge';
+export const ruleMessage = 'The tabBadge attribute is no longer used. Please use badge instead.';
 
 class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
   visitElement(element: ast.ElementAst, context: any): any {
     if (element.name) {
       let error = null;
 
-      if (element.name === 'ion-navbar') {
-        error = 'ion-navbar is no longer used. Please use ion-toolbar.';
-      }
+      const matchingElements: ast.AttrAst[] = [];
+      const matchingAttr = 'tabIcon';
 
-      if (error) {
-        const expr: any = (<any>element.sourceSpan).toString();
-        const internalStart = expr.indexOf(InvalidSyntaxBoxOpen) + 1;
-        const start = element.sourceSpan.start.offset + internalStart;
-        const absolutePosition = this.getSourcePosition(start - 1);
+      error = findTabAttributeMatches(element, matchingElements, matchingAttr, error, ruleMessage);
 
-        this.addFailure(this.createFailure(start, expr.trim().length, error/*, getReplacements(element, absolutePosition)*/));
-      }
+      matchingElements.forEach(element => {
+        this.addFailure(
+          this.createFailure(
+            element.sourceSpan.start.offset,
+            element.sourceSpan.end.offset,
+            error /*, getReplacements(element, absolutePosition)*/
+          )
+        );
+      });
     }
 
     super.visitElement(element, context);

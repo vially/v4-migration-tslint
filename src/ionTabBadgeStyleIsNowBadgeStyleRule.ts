@@ -6,8 +6,8 @@ import { IOptions } from 'tslint';
 import * as ts from 'typescript';
 import { findTabAttributeMatches } from './helpers/ionTabIelpers';
 
-export const ruleName = 'ion-tab-icon-is-now-icon';
-const ruleMessage = 'The tabIcon attribute is no longer used. Please use icon instead.';
+export const ruleName = 'ion-tab-badge-style-is-now-badge-style';
+export const ruleMessage = 'The tabBadgeStyle attribute is no longer used. Please use badgeStyle instead.';
 
 class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
   visitElement(element: ast.ElementAst, context: any): any {
@@ -38,7 +38,7 @@ export class Rule extends Lint.Rules.AbstractRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
-    description: ruleMessage,
+    description: 'Ion Navbar has been removed and Ion Toolbar is now the recommended component.',
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: false,
@@ -58,7 +58,6 @@ export class Rule extends Lint.Rules.AbstractRule {
     );
   }
 }
-
 function getLineLength(newlineLocations: any[], i: number) {
   if (i > 0) {
     return newlineLocations[i] - newlineLocations[i - 1];
