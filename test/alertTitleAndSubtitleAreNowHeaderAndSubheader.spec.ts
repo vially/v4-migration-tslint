@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { Replacement } from 'tslint';
-import { ruleName } from '../src/alertTitleAndSubtitleAreNowHeaderAndSubHeaderRule';
+import { ruleName } from '../src/alertTitleAndSubtitleAreNowHeaderAndSubheaderRule';
 import { assertAnnotated, assertSuccess } from './testHelper';
 
 describe(ruleName, () => {
