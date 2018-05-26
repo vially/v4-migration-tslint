@@ -10,6 +10,10 @@ export const ruleName = 'ion-tab-icon-is-now-icon';
 export const ruleMessage = 'The tabIcon attribute is no longer used. Please use icon instead.';
 
 class IonTabIconIsNowIconTemplateVisitor extends BasicTemplateAstVisitor {
+  getReplacements(text: ast.AttrAst, length: number, absolutePosition: number) {
+    return [Lint.Replacement.replaceFromTo(absolutePosition, absolutePosition + length, `icon`)];
+  }
+
   visitElement(element: ast.ElementAst, context: any): any {
     if (element.name) {
       let error = null;
@@ -20,11 +24,14 @@ class IonTabIconIsNowIconTemplateVisitor extends BasicTemplateAstVisitor {
       error = findTabAttributeMatches(element, matchingElements, matchingAttr, error, ruleMessage);
 
       matchingElements.forEach(matchedElement => {
+        const absolutePosition = this.getSourcePosition(matchedElement.sourceSpan.start.offset);
+
         this.addFailure(
           this.createFailure(
             matchedElement.sourceSpan.start.offset,
             matchedElement.name.length,
-            error /*, getReplacements(element, absolutePosition)*/
+            error,
+            this.getReplacements(matchedElement, matchedElement.name.length, absolutePosition)
           )
         );
       });

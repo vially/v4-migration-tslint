@@ -10,6 +10,10 @@ export const ruleName = 'ion-tab-badge-is-now-badge';
 export const ruleMessage = 'The tabBadge attribute is no longer used. Please use badge instead.';
 
 class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
+  getReplacements(text: ast.AttrAst, length: number, absolutePosition: number) {
+    return [Lint.Replacement.replaceFromTo(absolutePosition, absolutePosition + length, `badge`)];
+  }
+
   visitElement(element: ast.ElementAst, context: any): any {
     if (element.name) {
       let error = null;
@@ -20,11 +24,14 @@ class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
       error = findTabAttributeMatches(element, matchingElements, matchingAttr, error, ruleMessage);
 
       matchingElements.forEach(matchedElement => {
+        const absolutePosition = this.getSourcePosition(matchedElement.sourceSpan.start.offset);
+
         this.addFailure(
           this.createFailure(
             matchedElement.sourceSpan.start.offset + 1,
             matchedElement.name.length,
-            error /*, getReplacements(element, absolutePosition)*/
+            error,
+            this.getReplacements(matchedElement, matchedElement.name.length, absolutePosition)
           )
         );
       });
@@ -57,11 +64,4 @@ export class Rule extends Lint.Rules.AbstractRule {
       })
     );
   }
-}
-function getLineLength(newlineLocations: any[], i: number) {
-  if (i > 0) {
-    return newlineLocations[i] - newlineLocations[i - 1];
-  }
-
-  return newlineLocations[i];
 }
