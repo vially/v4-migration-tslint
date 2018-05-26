@@ -15,15 +15,15 @@ class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
       let error = null;
 
       const matchingElements: ast.AttrAst[] = [];
-      const matchingAttr = 'tabIcon';
+      const matchingAttr = 'tabBadge';
 
       error = findTabAttributeMatches(element, matchingElements, matchingAttr, error, ruleMessage);
 
-      matchingElements.forEach(element => {
+      matchingElements.forEach(matchedElement => {
         this.addFailure(
           this.createFailure(
-            element.sourceSpan.start.offset,
-            element.sourceSpan.end.offset,
+            matchedElement.sourceSpan.start.offset + 1,
+            matchedElement.name.length,
             error /*, getReplacements(element, absolutePosition)*/
           )
         );
@@ -38,7 +38,7 @@ export class Rule extends Lint.Rules.AbstractRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
-    description: 'Ion Navbar has been removed and Ion Toolbar is now the recommended component.',
+    description: ruleMessage,
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: false,

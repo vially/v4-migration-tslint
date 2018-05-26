@@ -3,6 +3,8 @@ export { Rule as ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeader } from './a
 export { Rule as AlertTitleAndSubtitleAreNowHeaderAndSubHeader } from './alertTitleAndSubtitleAreNowHeaderAndSubHeaderRule';
 export { Rule as IonTabIconIsNowIcon } from './ionTabIconIsNowIconRule';
 export { Rule as IonTabTitleIsNowLabel } from './ionTabTitleIsNowLabelRule';
+export { Rule as IonTabBadgeIsNowBadge } from './ionTabTitleIsNowLabelRule';
+export { Rule as IonTabBadgeStyleIsNowBadgeStyle } from './ionTabBadgeStyleIsNowBadgeStyleRule';
 
 export * from 'codelyzer/angular/config';
 

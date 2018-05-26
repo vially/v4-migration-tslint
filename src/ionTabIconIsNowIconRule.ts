@@ -9,7 +9,7 @@ import { findTabAttributeMatches } from './helpers/ionTabIelpers';
 export const ruleName = 'ion-tab-icon-is-now-icon';
 export const ruleMessage = 'The tabIcon attribute is no longer used. Please use icon instead.';
 
-class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
+class IonTabIconIsNowIconTemplateVisitor extends BasicTemplateAstVisitor {
   visitElement(element: ast.ElementAst, context: any): any {
     if (element.name) {
       let error = null;
@@ -53,7 +53,7 @@ export class Rule extends Lint.Rules.AbstractRule {
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
     return this.applyWithWalker(
       new NgWalker(sourceFile, this.getOptions(), {
-        templateVisitorCtrl: IonNavbarIsNowIonToolbarTemplateVisitor
+        templateVisitorCtrl: IonTabIconIsNowIconTemplateVisitor
       })
     );
   }

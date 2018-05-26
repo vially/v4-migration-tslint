@@ -9,21 +9,21 @@ import { findTabAttributeMatches } from './helpers/ionTabIelpers';
 export const ruleName = 'ion-tab-badge-style-is-now-badge-style';
 export const ruleMessage = 'The tabBadgeStyle attribute is no longer used. Please use badgeStyle instead.';
 
-class IonNavbarIsNowIonToolbarTemplateVisitor extends BasicTemplateAstVisitor {
+class IonTabBadgeStyleIsNowBadgeStyleTemplateVisitor extends BasicTemplateAstVisitor {
   visitElement(element: ast.ElementAst, context: any): any {
     if (element.name) {
       let error = null;
 
       const matchingElements: ast.AttrAst[] = [];
-      const matchingAttr = 'tabIcon';
+      const matchingAttr = 'tabBadgeStyle';
 
       error = findTabAttributeMatches(element, matchingElements, matchingAttr, error, ruleMessage);
 
-      matchingElements.forEach(element => {
+      matchingElements.forEach(matchedElement => {
         this.addFailure(
           this.createFailure(
-            element.sourceSpan.start.offset,
-            element.sourceSpan.end.offset,
+            matchedElement.sourceSpan.start.offset + 1,
+            matchedElement.name.length,
             error /*, getReplacements(element, absolutePosition)*/
           )
         );
@@ -38,7 +38,7 @@ export class Rule extends Lint.Rules.AbstractRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
-    description: 'Ion Navbar has been removed and Ion Toolbar is now the recommended component.',
+    description: ruleMessage,
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: false,
@@ -53,15 +53,8 @@ export class Rule extends Lint.Rules.AbstractRule {
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
     return this.applyWithWalker(
       new NgWalker(sourceFile, this.getOptions(), {
-        templateVisitorCtrl: IonNavbarIsNowIonToolbarTemplateVisitor
+        templateVisitorCtrl: IonTabBadgeStyleIsNowBadgeStyleTemplateVisitor
       })
     );
   }
-}
-function getLineLength(newlineLocations: any[], i: number) {
-  if (i > 0) {
-    return newlineLocations[i] - newlineLocations[i - 1];
-  }
-
-  return newlineLocations[i];
 }
