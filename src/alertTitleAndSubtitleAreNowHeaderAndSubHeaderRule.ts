@@ -6,10 +6,10 @@ export const ruleName = 'alert-title-and-subtitle-are-now-header-and-subheader';
 
 /**
  * This rule helps with the conversion of the AlertController API.
- * @class AlertTitleAndSubtitleAreNowHeaderAndSubHeaderWalker
+ * @class AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker
  * @extends {Lint.RuleWalker}
  */
-class AlertTitleAndSubtitleAreNowHeaderAndSubHeaderWalker extends Lint.RuleWalker {
+class AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker extends Lint.RuleWalker {
   foundPropertyArray = [];
 
   visitCallExpression(node: ts.CallExpression) {
@@ -64,6 +64,6 @@ export class Rule extends Lint.Rules.AbstractRule {
   }
 
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    return this.applyWithWalker(new AlertTitleAndSubtitleAreNowHeaderAndSubHeaderWalker(sourceFile, this.getOptions()));
+    return this.applyWithWalker(new AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker(sourceFile, this.getOptions()));
   }
 }
