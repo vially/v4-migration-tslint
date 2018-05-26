@@ -12,9 +12,11 @@ An effort to automatically fix syntax changes listed in [BREAKING.md](https://gi
 
 ## How to use
 
-Using this package is a piece of cake!
+### Coming Soon!!
 
-First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ionic-migration.json` at the root of your project and paste in the following JSON.
+~~Using this package is a piece of cake!~~
+
+~~First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ionic-migration.json` at the root of your project and paste in the following JSON.~~
 
 ```
 {
@@ -33,9 +35,9 @@ First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ioni
 }
 ```
 
-To lint your project use:
+~~To lint your project use:~~
 
-`./node_modules/.bin/tslint -c ionic-migration.json -p tsconfig.json`
+~~`./node_modules/.bin/tslint -c ionic-migration.json -p tsconfig.json`~~
 
 ## Rules
 
