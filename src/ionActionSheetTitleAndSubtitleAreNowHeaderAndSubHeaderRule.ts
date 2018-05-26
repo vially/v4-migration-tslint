@@ -2,14 +2,14 @@ import * as Lint from 'tslint';
 import { IOptions, Replacement } from 'tslint';
 import * as ts from 'typescript';
 
-export const ruleName = 'action-sheet-title-and-subtitle-are-now-header-and-subheader';
+export const ruleName = 'ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header';
 
 /**
  * This rule helps with the conversion of the ActionSheetController API.
- * @class ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker
+ * @class ActionSheetTitleAndSubtitleAreNowHeaderAndSubheaderWalker
  * @extends {Lint.RuleWalker}
  */
-class ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker extends Lint.RuleWalker {
+class ActionSheetTitleAndSubtitleAreNowHeaderAndSubheaderWalker extends Lint.RuleWalker {
   //actionControllerVariableName = undefined;
   foundPropertyArray = [];
 
@@ -84,6 +84,6 @@ export class Rule extends Lint.Rules.AbstractRule {
   }
 
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    return this.applyWithWalker(new ActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderWalker(sourceFile, this.getOptions()));
+    return this.applyWithWalker(new ActionSheetTitleAndSubtitleAreNowHeaderAndSubheaderWalker(sourceFile, this.getOptions()));
   }
 }

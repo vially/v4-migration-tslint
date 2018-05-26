@@ -10,3 +10,10 @@
 config.gypi
 CVS
 npm-debug.log
+test-results.xml
+.circleci
+.github
+src
+test
+tsconfig*
+tslint*
