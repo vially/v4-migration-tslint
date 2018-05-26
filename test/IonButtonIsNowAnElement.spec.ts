@@ -15,7 +15,7 @@ describe(ruleName, () => {
   });
 
   describe('failure', () => {
-    it('should fail when title is passed in', () => {
+    it('should fail when ion-button-attribute is used', () => {
       let source = `
       @Component({
         template: \`
