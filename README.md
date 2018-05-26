@@ -8,9 +8,7 @@
 
 An effort to automatically fix syntax changes listed in [BREAKING.md](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) using tslint + codelyzer.
 
-<aside class="notice">
-We are looking for contributors to help build these rules out!
-</aside>
+> We are looking for contributors to help build these rules out! We have not released a first version of this package yet but it is coming soon.
 
 ## How to use
 
