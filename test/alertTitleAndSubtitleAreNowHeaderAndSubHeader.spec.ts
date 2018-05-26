@@ -136,7 +136,6 @@ describe(ruleName, () => {
 
       const fixes: Replacement[] = failures[0].getFix() as any;
 
-      debugger;
       const res = Replacement.applyAll(source, fixes);
       expect(res).to.eq(`
       class DoSomething{

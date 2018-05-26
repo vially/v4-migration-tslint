@@ -1,4 +1,8 @@
 export { Rule as IonNavbarIsNowIonToolbarRule } from './ionNavbarIsNowIonToolbarRule';
+export { Rule as IonTabIconIsNowIcon } from './ionTabIconIsNowIconRule';
+export { Rule as IonTabTitleIsNowLabel } from './ionTabTitleIsNowLabelRule';
+export { Rule as IonTabBadgeIsNowBadge } from './ionTabTitleIsNowLabelRule';
+export { Rule as IonTabBadgeStyleIsNowBadgeStyle } from './ionTabBadgeStyleIsNowBadgeStyleRule';
 export { Rule as ActionSheetTitleAndSubtitleAreNowHeaderAndSubheader } from './actionSheetTitleAndSubtitleAreNowHeaderAndSubheaderRule';
 export { Rule as AlertTitleAndSubtitleAreNowHeaderAndSubheader } from './alertTitleAndSubtitleAreNowHeaderAndSubheaderRule';
 
