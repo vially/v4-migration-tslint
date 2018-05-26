@@ -2,15 +2,31 @@ import * as Lint from 'tslint';
 import { IOptions, Replacement } from 'tslint';
 import * as ts from 'typescript';
 
-export const ruleName = 'alert-title-and-subtitle-are-now-header-and-sub-header';
+export const ruleName = 'ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header';
 
 /**
- * This rule helps with the conversion of the AlertController API.
- * @class AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker
+ * This rule helps with the conversion of the ActionSheetController API.
+ * @class ActionSheetTitleAndSubtitleAreNowHeaderAndSubheaderWalker
  * @extends {Lint.RuleWalker}
  */
-class AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker extends Lint.RuleWalker {
+class ActionSheetTitleAndSubtitleAreNowHeaderAndSubheaderWalker extends Lint.RuleWalker {
+  //actionControllerVariableName = undefined;
   foundPropertyArray = [];
+
+  // TODO: Not sure if we need to track the name of the ActionSheetController variable.
+  // visitConstructorDeclaration(node: ts.ConstructorDeclaration) {
+  //   debugger;
+  //   for (let element of node.parameters) {
+  //     const typeName = (element.type as any).typeName.text;
+  //     if (typeName === 'ActionSheetController') {
+  //       this.actionControllerVariableName = (element.name as any).text;
+  //       this.tryAddFailure();
+  //       break;
+  //     }
+  //   }
+
+  //   super.visitConstructorDeclaration(node);
+  // }
 
   visitCallExpression(node: ts.CallExpression) {
     const expression = node.expression as any;
@@ -37,12 +53,16 @@ class AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker extends Lint.RuleWalke
 
       const replacementParam = argument.name.text === 'title' ? 'header' : 'subHeader';
 
+      // TODO: Determine if this needs to be added in later.
+      //if (this.actionControllerVariableName && this.actionControllerVariableName === argument.parentVariableName) {
       const errorMessage = `The ${argument.name.text} field has been replaced by ${replacementParam}.`;
 
       const replacement = new Replacement(argument.name.getStart(), argument.name.getWidth(), replacementParam);
 
       this.addFailure(this.createFailure(argument.name.getStart(), argument.name.getWidth(), errorMessage, [replacement]));
       this.foundPropertyArray.splice(i, 1);
+
+      //}
     }
   }
 }
@@ -51,7 +71,7 @@ export class Rule extends Lint.Rules.AbstractRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
-    description: 'AlertController now takes in different parameters to its create method.',
+    description: 'ActionSheetController now takes in different parameters to its create method.',
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: true,
@@ -64,6 +84,6 @@ export class Rule extends Lint.Rules.AbstractRule {
   }
 
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    return this.applyWithWalker(new AlertTitleAndSubtitleAreNowHeaderAndSubheaderWalker(sourceFile, this.getOptions()));
+    return this.applyWithWalker(new ActionSheetTitleAndSubtitleAreNowHeaderAndSubheaderWalker(sourceFile, this.getOptions()));
   }
 }
