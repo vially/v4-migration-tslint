@@ -37,7 +37,7 @@ First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ioni
 
 To lint your project use:
 
-./node_modules/.bin/tslint -c ionic-migration.json -p tsconfig.json
+`./node_modules/.bin/tslint -c ionic-migration.json -p tsconfig.json`
 
 ## Rules
 
