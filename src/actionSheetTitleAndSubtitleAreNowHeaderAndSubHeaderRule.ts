@@ -2,7 +2,7 @@ import * as Lint from 'tslint';
 import { IOptions, Replacement } from 'tslint';
 import * as ts from 'typescript';
 
-export const ruleName = 'action-sheet-title-and-subtitle-are-now-header-and-subheader';
+export const ruleName = 'action-sheet-title-and-subtitle-are-now-header-and-sub-header';
 
 /**
  * This rule helps with the conversion of the ActionSheetController API.
