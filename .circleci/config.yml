@@ -48,6 +48,7 @@ jobs:
           path: coverage
   deploy:
     <<: *defaults
+    steps:
       - attach_workspace:
           at: /tmp/workspace
       - run: npx semantic-release
