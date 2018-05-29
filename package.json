@@ -24,6 +24,7 @@
     "tsc": "tsc",
     "tsc:watch": "tsc --w",
     "semantic-release": "semantic-release",
+    "cz": "git-cz",
     "precommit": "npm run lint && npm run format:check"
   },
   "files": [
@@ -48,7 +49,9 @@
     "@types/sprintf-js": "^1.1.0",
     "chai": "^4.1.2",
     "codelyzer": "^4.3.0",
+    "commitizen": "^2.10.1",
     "coveralls": "^3.0.1",
+    "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
     "mocha": "^5.1.1",
     "mocha-junit-reporter": "^1.17.0",
@@ -82,5 +85,10 @@
     "exclude": [
       "dist/test/*.js"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

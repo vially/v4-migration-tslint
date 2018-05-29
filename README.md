@@ -92,7 +92,7 @@ Some changes are not covered by this fixer due to their complexity or because it
 
 ## Contributing Rules
 
-TODO
+You **must** use the conventional changelog standard. Install [commitizen](https://github.com/commitizen/cz-cli#installing-the-command-line-tool) and use `git cz` instead of `git commit` OR use `npm run cz` to make commits.
 
 [circle-badge]: https://circleci.com/gh/ionic-team/v4-migration-tslint.svg?style=shield
 [circle-badge-url]: https://circleci.com/gh/ionic-team/v4-migration-tslint
