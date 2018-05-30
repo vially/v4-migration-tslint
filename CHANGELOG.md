@@ -1,3 +1,11 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.0.0...v1.1.0) (2018-05-30)
+
+
+### Features
+
+* **rules:** add new ion-button attribute rules ([7063c57](https://github.com/ionic-team/v4-migration-tslint/commit/7063c57))
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-05-29)
 
