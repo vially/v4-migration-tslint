@@ -48,6 +48,11 @@ jobs:
           path: coverage
   deploy:
     <<: *defaults
+    environment:
+      GIT_AUTHOR_NAME: Ionitron
+      GIT_AUTHOR_EMAIL: hi@ionicframework.com
+      GIT_COMMITTER_NAME: Ionitron
+      GIT_COMMITTER_EMAIL: hi@ionicframework.com
     steps:
       - attach_workspace:
           at: /tmp/workspace
