@@ -6,6 +6,7 @@ export { Rule as IonTabBadgeStyleIsNowBadgeStyle } from './ionTabBadgeStyleIsNow
 export { Rule as ActionSheetTitleAndSubtitleAreNowHeaderAndSubheader } from './ionActionSheetTitleAndSubtitleAreNowHeaderAndSubHeaderRule';
 export { Rule as AlertTitleAndSubtitleAreNowHeaderAndSubheader } from './ionAlertTitleAndSubtitleAreNowHeaderAndSubHeaderRule';
 export { Rule as IonButtonIsNowAnElementRule } from './ionButtonIsNowAnElementRule';
+export { Rule as IonButtonAttributesAreRenamedRule } from './ionButtonAttributesAreRenamedRule';
 
 export * from 'codelyzer/angular/config';
 
