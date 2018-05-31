@@ -7,6 +7,7 @@ export { Rule as ActionSheetTitleAndSubtitleAreNowHeaderAndSubheader } from './i
 export { Rule as AlertTitleAndSubtitleAreNowHeaderAndSubheader } from './ionAlertTitleAndSubtitleAreNowHeaderAndSubHeaderRule';
 export { Rule as IonButtonIsNowAnElementRule } from './ionButtonIsNowAnElementRule';
 export { Rule as IonButtonAttributesAreRenamedRule } from './ionButtonAttributesAreRenamedRule';
+export { Rule as IonChipMarkupChangedRule } from './ionChipMarkupChangedRule';
 
 export * from 'codelyzer/angular/config';
 
