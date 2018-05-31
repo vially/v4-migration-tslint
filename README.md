@@ -12,8 +12,6 @@ An effort to automatically fix syntax changes listed in [BREAKING.md](https://gi
 
 ## How to use
 
-### Coming Soon!!
-
 Using this package is a piece of cake!
 
 First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ionic-migration.json` at the root of your project and paste in the following JSON.
