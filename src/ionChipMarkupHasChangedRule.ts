@@ -4,7 +4,7 @@ import { BasicTemplateAstVisitor } from 'codelyzer/angular/templates/basicTempla
 import * as Lint from 'tslint';
 import * as ts from 'typescript';
 
-export const ruleName = 'ion-chip-markup-changed';
+export const ruleName = 'ion-chip-markup-has-changed';
 
 class IonChipMarkupChangedTemplateVisitor extends BasicTemplateAstVisitor {
   visitElement(element: ast.ElementAst, context: any): any {

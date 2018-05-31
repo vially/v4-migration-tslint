@@ -22,9 +22,12 @@ First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ioni
     "node_modules/@ionic/v4-migration-tslint"
   ],
   "rules": {
-    "action-sheet-title-and-subtitle-are-now-header-and-sub-header": true,
+    "ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header": true,
+    "ion-alert-title-and-subtitle-are-now-header-and-sub-header": true,
+    "ion-button-is-now-an-element": true,
+    "ion-button-attributes-are-renamed": true,
+    "ion-chip-markup-has-changed": true,
     "ion-navbar-is-now-ion-toolbar": true,
-    "alert-title-and-subtitle-are-now-header-and-sub-header": true,
     "ion-tab-title-is-now-label": true,
     "ion-tab-icon-is-now-icon": true,
     "ion-tab-badge-is-now-badge": true,

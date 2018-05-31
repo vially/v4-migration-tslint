@@ -1,4 +1,4 @@
-import { ruleName } from '../src/ionChipMarkupChangedRule';
+import { ruleName } from '../src/ionChipMarkupHasChangedRule';
 import { assertAnnotated, assertSuccess } from './testHelper';
 
 describe(ruleName, () => {
