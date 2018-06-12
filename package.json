@@ -2,26 +2,30 @@
   "name": "@ionic/v4-migration-tslint",
   "version": "1.1.0",
   "description": "TSLint rules for Ionic Angular v4 Migration",
-  "main": "index.js",
+  "main": "rules/index.js",
   "scripts": {
-    "clean": "rimraf dist coverage test-results.xml .nyc_output",
+    "clean": "rimraf dist rules 'test/**/*.js' coverage test-results.xml .nyc_output",
     "format:base": "prettier --config ./.prettierrc \"*.{json}\" \"src/**/*.{css,scss,ts}\" \"test/**/*.{css,scss,ts}\"",
     "format:check": "npm run format:base -- --list-different",
     "format:fix": "npm run format:base -- --write",
     "lint": "tslint -c tslint.json \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
-    "build": "npm run clean && tsc",
-    "test": "npm run clean && tsc && mocha dist/test --recursive",
+    "build": "npm run clean && npm run tsc",
+    "src:tsc": "tsc",
+    "src:tsc:watch": "npm run src:tsc -- -w",
+    "test": "mocha test --recursive",
+    "test:tsc": "tsc -p tsconfig.test.json",
+    "test:tsc:watch": "npm run test:tsc -- -w",
     "test:ci": "npm run test -- --reporter mocha-junit-reporter",
-    "test:watch": "npm run clean && tsc && mocha dist/test --watch --recursive",
+    "test:watch": "mocha test --watch --recursive",
     "test:coverage": "npm run clean && nyc --reporter=lcov --reporter=text-lcov npm test && nyc report --reporter=text-lcov | coveralls",
-    "tsc": "tsc",
-    "tsc:watch": "tsc -w",
+    "tsc": "npm run src:tsc && npm run test:tsc",
+    "tsc:watch": "concurrently --names 'src,test' 'npm run src:tsc:watch -- --preserveWatchOutput' 'npm run test:tsc:watch -- --preserveWatchOutput'",
     "cz": "git-cz",
     "precommit": "npm run lint && npm run format:check"
   },
   "files": [
-    "dist"
+    "rules"
   ],
   "repository": {
     "type": "git",
@@ -45,6 +49,7 @@
     "chai": "^4.1.2",
     "codelyzer": "^4.3.0",
     "commitizen": "^2.10.1",
+    "concurrently": "^3.5.1",
     "coveralls": "^3.0.1",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
@@ -89,7 +94,7 @@
   "nyc": {
     "report-dir": "./coverage",
     "exclude": [
-      "dist/test/*.js"
+      "test/*.js"
     ]
   },
   "config": {

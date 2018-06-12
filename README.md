@@ -19,7 +19,7 @@ First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ioni
 ```
 {
   "rulesDirectory": [
-    "node_modules/@ionic/v4-migration-tslint"
+    "@ionic/v4-migration-tslint/rules"
   ],
   "rules": {
     "ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header": true,
