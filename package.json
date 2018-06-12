@@ -18,7 +18,7 @@
     "test:tsc:watch": "npm run test:tsc -- -w",
     "test:ci": "npm run test -- --reporter mocha-junit-reporter",
     "test:watch": "mocha test --watch --recursive",
-    "test:coverage": "npm run clean && nyc --reporter=lcov --reporter=text-lcov npm test && nyc report --reporter=text-lcov | coveralls",
+    "test:coverage": "npm run clean && npm run build && nyc --reporter=lcov --reporter=text-lcov npm test && nyc report --reporter=text-lcov | coveralls",
     "tsc": "npm run src:tsc && npm run test:tsc",
     "tsc:watch": "concurrently --names 'src,test' 'npm run src:tsc:watch -- --preserveWatchOutput' 'npm run test:tsc:watch -- --preserveWatchOutput'",
     "cz": "git-cz",
