@@ -15,12 +15,48 @@ describe(ruleName, () => {
   });
 
   describe('failure', () => {
-    it('should fail when ion-button-attribute is used', () => {
+    it('should fail when ion-button attribute is used on button', () => {
       let source = `
       @Component({
         template: \`
           <button ion-button></button>\`
                   ~~~~~~~~~~
+      })
+      class Bar{}
+          `;
+
+      assertAnnotated({
+        ruleName,
+        message: 'Ion Button is now an Element instead of an attribute.',
+        source
+      });
+    });
+
+    it('should fail when ion-button attribute is used on anchor', () => {
+      let source = `
+      @Component({
+        template: \`
+          <a ion-button (click)="doSomething()"></a>\`
+             ~~~~~~~~~~
+      })
+      class Bar{}
+          `;
+
+      assertAnnotated({
+        ruleName,
+        message: 'Ion Button is now an Element instead of an attribute.',
+        source
+      });
+    });
+
+    it('should fail when ion-button attribute is used with multiline', () => {
+      let source = `
+      @Component({
+        template: \`
+          <a
+            ion-button
+            ~~~~~~~~~~
+            (click)="doSomething()">Click Me</a>\`
       })
       class Bar{}
           `;

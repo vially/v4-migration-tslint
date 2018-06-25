@@ -10,7 +10,7 @@ export const ruleName = 'ion-button-is-now-an-element';
 class IonButtonIsNowAnElementTemplateVisitor extends BasicTemplateAstVisitor {
   visitElement(element: ast.ElementAst, context: any): any {
     if (element.name) {
-      const InvalidSyntaxBoxRe = /<(\w+)(?:[a-zA-Z\"\=]|\s)*(ion-button)(?:[a-zA-Z\"\=]|\s)*>/gis;
+      const InvalidSyntaxBoxRe = /<\w+[\s\S]+?(ion-button)[\s\S]*?>/gi;
 
       let error = 'Ion Button is now an Element instead of an attribute.';
 
