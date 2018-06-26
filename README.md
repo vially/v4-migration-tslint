@@ -46,56 +46,224 @@ We are looking for contributors to help build these rules out! We have not relea
     npx tslint -c ionic-migration.json -p tsconfig.json
     ```
 
+1. Attempt automatic fixes with `--fix` (note: not all rules have fixes):
+
+    ```
+    npx tslint -c ionic-migration.json -p tsconfig.json --fix
+    ```
+
 ## Rules
 
-Rules without an **author** and without green checkmarks need some help! See [#contributing-rules](#contributing-rules) to learn how.
+:black_square_button: &ndash; These rules need to be completed! See the [Contributing Rules](#contributing-rules) to get started.
 
-| key                                                                 | link                                                                                                                  | status                                                         | author                                  |
-| ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------- |
-| `ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header` | [#action-sheet](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#action-sheet)                     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-alert-title-and-subtitle-are-now-header-and-sub-header`        | [#alert](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#alert)                                   | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-back-button-is-no-longer-added-to-navigation-bar`              | [#back-button](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#back-button)                       | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-button-is-now-an-element`                                      | [#button](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#button)                                 | :white_check_mark: tested<br> :black_square_button: fixable    | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-button-attributes-are-renamed`                                 | [#attributes-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#attributes-renamed)         | :white_check_mark: tested<br> :black_square_button: fixable    | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-chip-markup-has-changed`                                       | [#chip](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#chip)                                     | :white_check_mark: tested<br> :black_square_button: fixable    | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-datetime-class-has-been-renamed`                               | [#datetime](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#datetime)                             | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-fab-markup-has-changed`                                        | [#fab-markup-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#markup-changed-2)           | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-fab-attributes-have-changed`                                   | [#fab-attributes-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#attributes-renamed-1)   | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-fab-fixed-context-must-be-in-a-fixed-slot`                     | [#fixed-content](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#fixed-content)                   | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-icon-is-active-property-has-been-removed`                      | [#property-removed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#property-removed)             | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-input-sass-variables-have-been-renamed`                        | [#input](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#input)                                   | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-markup-has-changed`                                       | [#item-markup-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#markup-changed-3)          | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-label-is-now-required`                                    | [#item-label-required](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#label-required)            | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-detail-push-is-now-a-single-property`                     | [#item-detail-push](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#detail-push)                  | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-divider-now-requires-label`                               | [#divider-requires-label](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#label-required-1)       | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-options-are-now-start-and-end`                            | [#item-options-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#attributes-renamed-3)     | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-sliding-markup-has-changed`                               | [#item-sliding-markup-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#markup-changed-4)  | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-item-sliding-method-renamed`                                   | [#item-sliding-method-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#method-renamed)    | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-list-header-label-now-required`                                | [#list-header-label-required](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#label-required-2)   | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-menu-toggle-markup-changed`                                    | [#menu-toggle-markup-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#markup-changed-5)   | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-nav-method-renamed`                                            | [#nav-method-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#method-renamed-1)           | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-navbar-is-now-ion-toolbar`                                     | [#navbar](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#navbar)                                 | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-option-markup-has-changed`                                     | [#option-markup-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#markup-changed-6)        | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-option-class-has-changed`                                      | [#option-class-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#class-changed)            | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-radio-slot-required`                                           | [#radio-slot-required](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#slot-required)             | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-radio-group-is-now-an-element`                                 | [#radio-group](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#radio-group)                       | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-range-attributes-renamed`                                      | [#range-attributes-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#attributes-renamed-4) | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-select-attributes-are-renamed`                                 | [#select-attributes-renamed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#select)              | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-spinner-name-is-changed`                                       | [#spinner-name-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#name-changed)             | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-text-must-now-wrap-elements`                                   | [#text-markup-changed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#markup-changed-7)          | :black_square_button: tested<br> :black_square_button: fixable |                                         |
-| `ion-tab-title-is-now-label`                                        | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs)                                     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-tab-icon-is-now-icon`                                          | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs)                                     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-tab-badge-is-now-badge`                                        | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs)                                     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
-| `ion-tab-badge-style-is-now-badge-style`                            | [#tabs](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs)                                     | :white_check_mark: tested<br> :white_check_mark: fixable       | [@cwoolum](https://github.com/cwoolum/) |
+:wrench: &ndash; These rules can be automatically fixed with `--fix`.
+
+<table>
+<tr>
+    <th>category</th>
+    <th>rule</th>
+    <th>contributors</th>
+</tr>
+<tr>
+    <th colspan="3">Code Changes</th>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#action-sheet">Action Sheet</a></th>
+    <td>:white_check_mark: <code>ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#alert">Alert</a></th>
+    <td>:white_check_mark: <code>ion-alert-title-and-subtitle-are-now-header-and-sub-header</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#datetime">Datetime</a></th>
+    <td>:black_square_button: <code>ion-datetime-capitalization-changed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item-sliding">Item Sliding</a></th>
+    <td>:black_square_button: <code>ion-item-option-method-get-sliding-percent-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#option">Option</a></th>
+    <td>:black_square_button: <code>ion-option-class-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th rowspan="2"><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#overlays">Overlays</a></th>
+    <td>:black_square_button: <code>ion-overlay-method-create-should-use-await</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-overlay-method-present-should-use-await</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th colspan="3">Markup Changes</th>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#back-button">Back Button</a></th>
+    <td>:black_square_button: <code>ion-back-button-not-added-by-default</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th rowspan="2"><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#button">Button</a></th>
+    <td>:white_check_mark: <code>ion-button-attributes-are-renamed</code></td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <td>:white_check_mark: <code>ion-button-is-now-an-element</code></td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#chip">Chip</a></th>
+    <td>:white_check_mark: <code>ion-chip-markup-has-changed</code></td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <th rowspan="3"><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#fab">FAB</a></th>
+    <td>:black_square_button: <code>ion-fab-button-is-now-an-element</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-fab-attributes-are-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-fab-fixed-content</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#grid">Grid</a></th>
+    <td>:black_square_button: <code>ion-grid-attributes-are-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#icon">Icon</a></th>
+    <td>:black_square_button: <code>ion-icon-property-is-active-is-removed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th rowspan="4"><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item">Item</a></th>
+    <td>:black_square_button: <code>ion-item-is-now-an-element</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-item-ion-label-is-now-required</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-item-attributes-are-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-item-detail-is-now-single-property</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item-divider">Item Divider</a></th>
+    <td>:black_square_button: <code>ion-item-divider-ion-label-is-now-required</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item-options">Item Options</a></th>
+    <td>:black_square_button: <code>ion-item-options-attributes-are-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item-sliding">Item Sliding</a></th>
+    <td>:black_square_button: <code>ion-item-option-is-now-an-element</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#list-header">List Header</a></th>
+    <td>:black_square_button: <code>ion-list-header-ion-label-is-now-required</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#menu-toggle">Menu Toggle</a></th>
+    <td>:black_square_button: <code>ion-menu-toggle-is-now-an-element</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#nav">Nav</a></th>
+    <td>:black_square_button: <code>ion-nav-controller-method-remove-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#navbar">Navbar</a></th>
+    <td>:white_check_mark: <code>ion-navbar-is-now-ion-toolbar</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#option">Option</a></th>
+    <td>:black_square_button: <code>ion-option-is-now-ion-select-option</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th rowspan="2"><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#radio">Radio</a></th>
+    <td>:black_square_button: <code>ion-radio-slot-required</code></td>
+    <td></td>
+</tr>
+<tr>
+    <td>:black_square_button: <code>ion-radio-group-is-now-an-element</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#range">Range</a></th>
+    <td>:black_square_button: <code>ion-range-attributes-are-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#select">Select</a></th>
+    <td>:black_square_button: <code>ion-select-property-select-options-renamed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#spinner">Spinner</a></th>
+    <td>:black_square_button: <code>ion-spinner-name-changed</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th rowspan="4"><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs">Tabs</a></th>
+    <td>:white_check_mark: <code>ion-tab-badge-is-now-badge</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <td>:white_check_mark: <code>ion-tab-badge-style-is-now-badge-style</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <td>:white_check_mark: <code>ion-tab-icon-is-now-icon</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <td>:white_check_mark: <code>ion-tab-title-is-now-label</code> :wrench:</td>
+    <td><a href="https://github.com/cwoolum">@cwoolum</a></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#text--typography">Text / Typography</a></th>
+    <td>:black_square_button: <code>ion-text-is-now-an-element</code></td>
+    <td></td>
+</tr>
+<tr>
+    <th><a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#toolbar">Toolbar</a></th>
+    <td>:black_square_button: <code>ion-toolbar-attributes-are-renamed</code></td>
+    <td></td>
+</tr>
+</table>
 
 ### Not Covered
 
-Some changes are not covered by this fixer due to their complexity or because it would make no sense to do in automated fashion. They are
+Some changes are not covered by this fixer due to their complexity or because it would make no sense to do in automated fashion. They are:
 
-[#colors](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#colors)
-[#dynamic-mode](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#dynamic-mode)
-[#icon-fonts-removed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#icon)
-[#theming](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#theming)
+* [Colors](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#colors)
+* [Dynamic Mode](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#dynamic-mode)
+* [Icon &raquo; Fonts Removed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#icon)
+* [Theming](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#theming)
 
 ## Contributing Rules
 
