@@ -8,37 +8,43 @@
 
 An effort to automatically fix syntax changes listed in [BREAKING.md](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) using tslint + codelyzer.
 
-> We are looking for contributors to help build these rules out! We have not released a first version of this package yet but it is coming soon.
+We are looking for contributors to help build these rules out! We have not released a first version of this package yet but it is coming soon.
 
-## How to use
+## How to Use
 
-Using this package is a piece of cake!
+1. Install the lint rules:
 
-First run `npm i @ionic/v4-migration-tslint --save-dev`. Add a file called `ionic-migration.json` at the root of your project and paste in the following JSON.
+    ```
+    npm i -D @ionic/v4-migration-tslint
+    ```
 
-```
-{
-  "rulesDirectory": [
-    "@ionic/v4-migration-tslint/rules"
-  ],
-  "rules": {
-    "ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header": true,
-    "ion-alert-title-and-subtitle-are-now-header-and-sub-header": true,
-    "ion-button-is-now-an-element": true,
-    "ion-button-attributes-are-renamed": true,
-    "ion-chip-markup-has-changed": true,
-    "ion-navbar-is-now-ion-toolbar": true,
-    "ion-tab-title-is-now-label": true,
-    "ion-tab-icon-is-now-icon": true,
-    "ion-tab-badge-is-now-badge": true,
-    "ion-tab-badge-style-is-now-badge-style": true
-  }
-}
-```
+1. Add a file called `ionic-migration.json` at the root of your project and paste in the following JSON.
 
-To lint your project use:
+    ```
+    {
+      "rulesDirectory": [
+        "@ionic/v4-migration-tslint/rules"
+      ],
+      "rules": {
+        "ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header": true,
+        "ion-alert-title-and-subtitle-are-now-header-and-sub-header": true,
+        "ion-button-is-now-an-element": true,
+        "ion-button-attributes-are-renamed": true,
+        "ion-chip-markup-has-changed": true,
+        "ion-navbar-is-now-ion-toolbar": true,
+        "ion-tab-title-is-now-label": true,
+        "ion-tab-icon-is-now-icon": true,
+        "ion-tab-badge-is-now-badge": true,
+        "ion-tab-badge-style-is-now-badge-style": true
+      }
+    }
+    ```
 
-`./node_modules/.bin/tslint -c ionic-migration.json -p tsconfig.json`
+1. Lint your project:
+
+    ```
+    npx tslint -c ionic-migration.json -p tsconfig.json
+    ```
 
 ## Rules
 
