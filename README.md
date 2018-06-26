@@ -54,7 +54,7 @@ We are looking for contributors to help build these rules out! We have not relea
 
 ## Rules
 
-:black_square_button: &ndash; These rules need to be completed! See the [Contributing Rules](#contributing-rules) to get started.
+:black_square_button: &ndash; These rules need to be completed! See [`CONTRIBUTING.md`](https://github.com/ionic-team/v4-migration-tslint/blob/develop/CONTRIBUTING.md) to get started.
 
 :wrench: &ndash; These rules can be automatically fixed with `--fix`.
 
@@ -264,10 +264,6 @@ Some changes are not covered by this fixer due to their complexity or because it
 * [Dynamic Mode](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#dynamic-mode)
 * [Icon &raquo; Fonts Removed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#icon)
 * [Theming](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#theming)
-
-## Contributing Rules
-
-You **must** use the conventional changelog standard. Install [commitizen](https://github.com/commitizen/cz-cli#installing-the-command-line-tool) and use `git cz` instead of `git commit` OR use `npm run cz` to make commits.
 
 [circle-badge]: https://circleci.com/gh/ionic-team/v4-migration-tslint.svg?style=shield
 [circle-badge-url]: https://circleci.com/gh/ionic-team/v4-migration-tslint
