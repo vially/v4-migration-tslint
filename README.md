@@ -26,8 +26,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "@ionic/v4-migration-tslint/rules"
       ],
       "rules": {
-        "ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header": true,
-        "ion-alert-title-and-subtitle-are-now-header-and-sub-header": true,
+        "ion-action-sheet-method-create-parameters-renamed": true,
+        "ion-alert-method-create-parameters-renamed": true,
         "ion-button-is-now-an-element": true,
         "ion-button-attributes-are-renamed": true,
         "ion-chip-markup-has-changed": true,
@@ -74,7 +74,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td>:wrench:</td>
     <td>:white_check_mark:</td>
     <td>
-      <code>ion-action-sheet-title-and-subtitle-are-now-header-and-sub-header</code></td>
+      <code>ion-action-sheet-method-create-parameters-renamed</code></td>
     <td>
       <a href="https://github.com/cwoolum">@cwoolum</a>
     </td>
@@ -86,7 +86,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td>:wrench:</td>
     <td>:white_check_mark:</td>
     <td>
-      <code>ion-alert-title-and-subtitle-are-now-header-and-sub-header</code></td>
+      <code>ion-alert-method-create-parameters-renamed</code></td>
     <td>
       <a href="https://github.com/cwoolum">@cwoolum</a>
     </td>
