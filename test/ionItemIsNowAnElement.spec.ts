@@ -27,7 +27,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'ion-item is now an Element instead of an Angular Directive.',
+        message: 'ion-item is now an ion-item element instead of an Angular directive.',
         source
       });
     });
@@ -44,7 +44,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'ion-item is now an Element instead of an Angular Directive.',
+        message: 'ion-item is now an ion-item element instead of an Angular directive.',
         source
       });
     });
@@ -63,7 +63,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'ion-item is now an Element instead of an Angular Directive.',
+        message: 'ion-item is now an ion-item element instead of an Angular directive.',
         source
       });
     });

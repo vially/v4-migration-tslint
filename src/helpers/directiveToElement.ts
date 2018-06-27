@@ -4,17 +4,17 @@ import { BasicTemplateAstVisitor } from 'codelyzer/angular/templates/basicTempla
 import * as Lint from 'tslint';
 import * as ts from 'typescript';
 
-export function generateDescription(directive: string) {
-  return `${directive} is now an Element instead of an Angular Directive.`;
+export function generateDescription(directive: string, resultantElement: string) {
+  return `${directive} is now an ${resultantElement} element instead of an Angular directive.`;
 }
 
-export function createDirectiveToElementTemplateVisitorClass(directive: string) {
+export function createDirectiveToElementTemplateVisitorClass(directive: string, resultantElement: string) {
   return class extends BasicTemplateAstVisitor {
     visitElement(element: ast.ElementAst, context: any): any {
       if (element.name) {
         const InvalidSyntaxBoxRe = new RegExp(`<\\w+[\\s\\S]+?(${directive})[\\s\\S]*?>`, 'gi');
 
-        let error = generateDescription(directive);
+        let error = generateDescription(directive, resultantElement);
 
         const expr = element.sourceSpan.toString();
 
@@ -34,12 +34,12 @@ export function createDirectiveToElementTemplateVisitorClass(directive: string) 
   };
 }
 
-export function createDirectiveToElementRuleClass(ruleName: string, directive: string) {
+export function createDirectiveToElementRuleClass(ruleName: string, directive: string, resultantElement = directive) {
   return class extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
       ruleName: ruleName,
       type: 'functionality',
-      description: generateDescription(directive),
+      description: generateDescription(directive, resultantElement),
       options: null,
       optionsDescription: 'Not configurable.',
       typescriptOnly: false,
@@ -49,7 +49,7 @@ export function createDirectiveToElementRuleClass(ruleName: string, directive: s
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
       return this.applyWithWalker(
         new NgWalker(sourceFile, this.getOptions(), {
-          templateVisitorCtrl: createDirectiveToElementTemplateVisitorClass(directive)
+          templateVisitorCtrl: createDirectiveToElementTemplateVisitorClass(directive, resultantElement)
         })
       );
     }
