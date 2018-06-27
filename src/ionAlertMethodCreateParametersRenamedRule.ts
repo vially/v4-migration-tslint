@@ -1,51 +1,13 @@
+import * as utils from 'tsutils';
 import * as Lint from 'tslint';
 import { IOptions, Replacement } from 'tslint';
 import * as ts from 'typescript';
 
 export const ruleName = 'ion-alert-method-create-parameters-renamed';
 
-/**
- * This rule helps with the conversion of the AlertController API.
- */
-class AlertMethodCreateParametersRenamedWalker extends Lint.RuleWalker {
-  foundPropertyArray = [];
+const parameterReplacementMap = new Map([['title', 'header'], ['subTitle', 'subHeader']]);
 
-  visitCallExpression(node: ts.CallExpression) {
-    const expression = node.expression as any;
-
-    if (expression.name && expression.name.text === 'create') {
-      for (let argument of (node.arguments[0] as any).properties) {
-        const name = argument.name.text;
-
-        switch (name) {
-          case 'title':
-          case 'subTitle':
-            argument.parentVariableName = (node.expression as any).expression.text;
-            this.foundPropertyArray.push(argument);
-            this.tryAddFailure();
-            break;
-        }
-      }
-    }
-  }
-
-  private tryAddFailure() {
-    for (let i = this.foundPropertyArray.length - 1; i >= 0; i--) {
-      let argument = this.foundPropertyArray[i];
-
-      const replacementParam = argument.name.text === 'title' ? 'header' : 'subHeader';
-
-      const errorMessage = `The ${argument.name.text} field has been replaced by ${replacementParam}.`;
-
-      const replacement = new Replacement(argument.name.getStart(), argument.name.getWidth(), replacementParam);
-
-      this.addFailure(this.createFailure(argument.name.getStart(), argument.name.getWidth(), errorMessage, [replacement]));
-      this.foundPropertyArray.splice(i, 1);
-    }
-  }
-}
-
-export class Rule extends Lint.Rules.AbstractRule {
+export class Rule extends Lint.Rules.TypedRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
@@ -53,10 +15,39 @@ export class Rule extends Lint.Rules.AbstractRule {
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: true,
+    requiresTypeInfo: true,
     hasFix: true
   };
 
-  public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    return this.applyWithWalker(new AlertMethodCreateParametersRenamedWalker(sourceFile, this.getOptions()));
+  public applyWithProgram(sourceFile: ts.SourceFile, program: ts.Program): Lint.RuleFailure[] {
+    return this.applyWithFunction(sourceFile, walk, undefined, program.getTypeChecker());
   }
+}
+
+function walk(ctx: Lint.WalkContext<void>, checker: ts.TypeChecker): void {
+  const cb = (node: ts.Node) => {
+    const sf = node.getSourceFile();
+    if (utils.isCallExpression(node)) {
+      const type = checker.getTypeAtLocation(node.expression);
+
+      // TODO: inspect type
+
+      // for (const argument of node.arguments[0].properties) {
+      //   debugger;
+      //   const name = argument.name.text;
+      //   const replacementName = parameterReplacementMap.get(name);
+
+      //   if (replacementName) {
+      //     const errorMessage = `The ${argument.name.text} parameter has been replaced by ${replacementName}.`;
+      //     const replacement = new Replacement(argument.name.getStart(), argument.name.getWidth(), replacementName);
+
+      //     this.addFailure(this.createFailure(argument.name.getStart(), argument.name.getWidth(), errorMessage, [replacement]));
+      //   }
+      // }
+    }
+
+    ts.forEachChild(node, cb);
+  };
+
+  ts.forEachChild(ctx.sourceFile, cb);
 }
