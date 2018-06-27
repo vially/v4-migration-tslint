@@ -1,31 +1,6 @@
-import { NgWalker } from 'codelyzer/angular/ngWalker';
-import * as Lint from 'tslint';
-import { IOptions } from 'tslint';
-import * as ts from 'typescript';
+import { createDirectiveToElementRuleClass } from './helpers/directiveToElement';
 
-import { createDirectiveToElementTemplateVisitorClass, generateDescription } from './helpers/directiveToElement';
-
-export const ruleName = 'ion-item-is-now-an-element';
 const directive = 'ion-item';
 
-const IonItemIsNowAnElementTemplateVisitor = createDirectiveToElementTemplateVisitorClass(directive);
-
-export class Rule extends Lint.Rules.AbstractRule {
-  public static metadata: Lint.IRuleMetadata = {
-    ruleName: ruleName,
-    type: 'functionality',
-    description: generateDescription(directive),
-    options: null,
-    optionsDescription: 'Not configurable.',
-    typescriptOnly: false,
-    hasFix: true
-  };
-
-  public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
-    return this.applyWithWalker(
-      new NgWalker(sourceFile, this.getOptions(), {
-        templateVisitorCtrl: IonItemIsNowAnElementTemplateVisitor
-      })
-    );
-  }
-}
+export const ruleName = 'ion-item-is-now-an-element';
+export const Rule = createDirectiveToElementRuleClass(ruleName, directive);
