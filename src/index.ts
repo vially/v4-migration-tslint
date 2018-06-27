@@ -4,6 +4,7 @@ export { Rule as AlertTitleAndSubtitleAreNowHeaderAndSubheader } from './ionAler
 export { Rule as IonButtonAttributesAreRenamedRule } from './ionButtonAttributesAreRenamedRule';
 export { Rule as IonButtonIsNowAnElementRule } from './ionButtonIsNowAnElementRule';
 export { Rule as IonChipMarkupChangedRule } from './ionChipMarkupHasChangedRule';
+export { Rule as ionDatetimeCapitalizationChangedRule } from './ionDatetimeCapitalizationChangedRule';
 export { Rule as IonNavbarIsNowIonToolbarRule } from './ionNavbarIsNowIonToolbarRule';
 export { Rule as IonTabBadgeStyleIsNowBadgeStyle } from './ionTabBadgeStyleIsNowBadgeStyleRule';
 export { Rule as IonTabIconIsNowIcon } from './ionTabIconIsNowIconRule';
