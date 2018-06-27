@@ -6,7 +6,7 @@ describe(ruleName, () => {
     it('should work with proper style', () => {
       let source = `
       @Component({
-        template: \`<ion-item><ion-item>\`
+        template: \`<ion-item></ion-item>\`
       })
       class Bar{}
         `;
