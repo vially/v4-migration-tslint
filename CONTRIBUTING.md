@@ -7,6 +7,8 @@
 
 ### Workflow
 
+This repo uses [semantic-release](https://github.com/semantic-release/semantic-release), so it's important to follow a strict workflow to ensure properly automated releases.
+
 * Work off of `develop` branch (create new branch or fork)
 * Make changes with relevant test changes
 * Use `npm run cz` (or `git cz` if [commitizen](https://github.com/commitizen/cz-cli) is installed globally) to make commits
@@ -34,3 +36,7 @@ Do not use `npm link`!
     ```
 
 1. Follow usage instructions in [`README.md`](https://github.com/ionic-team/v4-migration-tslint/blob/develop/README.md#how-to-use)
+
+### Publishing
+
+Releases are automated in CI using [semantic-release](https://github.com/semantic-release/semantic-release) when the `master` branch is pushed to Github. Rebase `develop` with `master`. Commits in `develop` should be appropriately formatted from the PR workflow (see [Workflow](#workflow)).
