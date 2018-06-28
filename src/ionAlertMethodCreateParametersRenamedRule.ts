@@ -27,8 +27,14 @@ export class Rule extends Lint.Rules.TypedRule {
 function walk(ctx: Lint.WalkContext<void>, checker: ts.TypeChecker): void {
   const cb = (node: ts.Node) => {
     const sf = node.getSourceFile();
+
+    if (sf.fileName !== '/Users/dan/apps/angular/lintz/src/app/pages/home/home.page.ts') {
+      return;
+    }
+
     if (utils.isCallExpression(node)) {
       const type = checker.getTypeAtLocation(node.expression);
+      debugger;
 
       // TODO: inspect type
 
