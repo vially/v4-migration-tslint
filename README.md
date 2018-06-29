@@ -154,7 +154,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <th rowspan="2">
       <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#button">Button</a>
     </th>
-    <td></td>
+    <td>:wrench:</td>
     <td>:white_check_mark:</td>
     <td>
       <code>ion-button-attributes-renamed</code>
@@ -240,7 +240,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
   </tr>
   <tr>
-    <th rowspan="4">
+    <th rowspan="3">
       <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item">Item</a>
     </th>
     <td></td>
