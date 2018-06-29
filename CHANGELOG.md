@@ -1,3 +1,23 @@
+# [1.2.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.1.0...v1.2.0) (2018-06-29)
+
+
+### Bug Fixes
+
+* **rules:** fix ion-button-is-now-an-element for angular html syntax ([bb5f631](https://github.com/ionic-team/v4-migration-tslint/commit/bb5f631))
+* **test:** add proper closing tag ([39f373f](https://github.com/ionic-team/v4-migration-tslint/commit/39f373f))
+* **test:** prefer `mocha` over `mocha test` ([9122393](https://github.com/ionic-team/v4-migration-tslint/commit/9122393))
+
+
+### Features
+
+* **datetime:** add check for import change ([1a9928b](https://github.com/ionic-team/v4-migration-tslint/commit/1a9928b))
+* **getSlidingPercent rule:** ([#19](https://github.com/ionic-team/v4-migration-tslint/issues/19)) ([2617d26](https://github.com/ionic-team/v4-migration-tslint/commit/2617d26))
+* **rule:** add new ion-chip rule ([6fc7d7d](https://github.com/ionic-team/v4-migration-tslint/commit/6fc7d7d))
+* **rule:** ion-item-options markup has changed ([#15](https://github.com/ionic-team/v4-migration-tslint/issues/15)) ([c48e556](https://github.com/ionic-team/v4-migration-tslint/commit/c48e556))
+* **rules:** add ion-fab-attributes-renamed rule ([#16](https://github.com/ionic-team/v4-migration-tslint/issues/16)) ([a71d8bc](https://github.com/ionic-team/v4-migration-tslint/commit/a71d8bc))
+* **rules:** add ion-fab-button-is-now-an-element rule ([f793b16](https://github.com/ionic-team/v4-migration-tslint/commit/f793b16))
+* **rules:** add ion-item-is-now-an-element rule ([#10](https://github.com/ionic-team/v4-migration-tslint/issues/10)) ([846a37e](https://github.com/ionic-team/v4-migration-tslint/commit/846a37e))
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.0.0...v1.1.0) (2018-05-30)
 
