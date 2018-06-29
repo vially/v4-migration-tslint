@@ -4,7 +4,7 @@ import * as ts from 'typescript';
 
 import { createAttributesRenamedTemplateVisitorClass } from './helpers/attributesRenamed';
 
-export const ruleName = 'ion-button-attributes-are-renamed';
+export const ruleName = 'ion-button-attributes-renamed';
 
 const replacementMap = new Map([
   ['icon-left', 'slot="start"'],

@@ -29,7 +29,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "ion-action-sheet-method-create-parameters-renamed": true,
         "ion-alert-method-create-parameters-renamed": true,
         "ion-button-is-now-an-element": true,
-        "ion-button-attributes-are-renamed": true,
+        "ion-button-attributes-renamed": true,
         "ion-chip-markup-has-changed": true,
         "ion-navbar-is-now-ion-toolbar": true,
         "ion-tab-title-is-now-label": true,
@@ -166,7 +166,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_check_mark:</td>
     <td>
-      <code>ion-button-attributes-are-renamed</code>
+      <code>ion-button-attributes-renamed</code>
     </td>
     <td>
       <a href="https://github.com/cwoolum">@cwoolum</a>
@@ -233,7 +233,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-grid-attributes-are-renamed</code>
+      <code>ion-grid-attributes-renamed</code>
     </td>
     <td></td>
   </tr>
@@ -273,7 +273,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-item-attributes-are-renamed</code>
+      <code>ion-item-attributes-renamed</code>
     </td>
     <td></td>
   </tr>
@@ -303,7 +303,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-item-options-attributes-are-renamed</code>
+      <code>ion-item-options-attributes-renamed</code>
     </td>
     <td>
       <a href="https://github.com/mhartington">@mhartington</a>
@@ -402,7 +402,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-range-attributes-are-renamed</code>
+      <code>ion-range-attributes-renamed</code>
     </td>
     <td></td>
   </tr>
@@ -485,7 +485,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-toolbar-attributes-are-renamed</code>
+      <code>ion-toolbar-attributes-renamed</code>
     </td>
     <td></td>
   </tr>

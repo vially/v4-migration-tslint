@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { Replacement, Utils } from 'tslint';
-import { ruleName } from '../src/ionButtonAttributesAreRenamedRule';
+import { ruleName } from '../src/ionButtonAttributesRenamedRule';
 import { assertAnnotated, assertFailure, assertFailures, assertMultipleAnnotated, assertSuccess } from './testHelper';
 
 describe(ruleName, () => {
