@@ -26,7 +26,18 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "@ionic/v4-migration-tslint/rules"
       ],
       "rules": {
-        ...
+        "ion-action-sheet-method-create-parameters-renamed": true,
+        "ion-alert-method-create-parameters-renamed": true,
+        "ion-datetime-capitalization-changed": true,
+        "ion-button-attributes-renamed": true,
+        "ion-button-is-now-an-element": true,
+        "ion-chip-markup-has-changed": true,
+        "ion-fab-button-is-now-an-element": true,
+        "ion-fab-attributes-renamed": true,
+        "ion-item-is-now-an-element": true,
+        "ion-item-option-is-now-an-element": true,
+        "ion-navbar-is-now-ion-toolbar": true,
+        "ion-tab-attributes-renamed": true
       }
     }
     ```
