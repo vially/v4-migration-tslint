@@ -27,7 +27,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'icon-left has been replaced by the slot="start" attribute.',
+        message: 'The icon-left attribute of ion-button has been renamed. Use slot="start" instead.',
         source
       });
     });
@@ -44,7 +44,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'icon-start has been replaced by the slot="start" attribute.',
+        message: 'The icon-start attribute of ion-button has been renamed. Use slot="start" instead.',
         source
       });
     });
@@ -61,7 +61,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'icon-right has been replaced by the slot="end" attribute.',
+        message: 'The icon-right attribute of ion-button has been renamed. Use slot="end" instead.',
         source
       });
     });
@@ -78,7 +78,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'icon-end has been replaced by the slot="end" attribute.',
+        message: 'The icon-end attribute of ion-button has been renamed. Use slot="end" instead.',
         source
       });
     });
@@ -95,7 +95,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'small has been replaced by the size attribute.',
+        message: 'The small attribute of ion-button has been renamed. Use size="small" instead.',
         source
       });
     });
@@ -112,7 +112,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'large has been replaced by the size attribute.',
+        message: 'The large attribute of ion-button has been renamed. Use size="large" instead.',
         source
       });
     });
@@ -129,7 +129,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'clear has been replaced by the fill attribute.',
+        message: 'The clear attribute of ion-button has been renamed. Use fill="clear" instead.',
         source
       });
     });
@@ -146,7 +146,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'outline has been replaced by the fill attribute.',
+        message: 'The outline attribute of ion-button has been renamed. Use fill="outline" instead.',
         source
       });
     });
@@ -163,7 +163,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'solid has been replaced by the fill attribute.',
+        message: 'The solid attribute of ion-button has been renamed. Use fill="solid" instead.',
         source
       });
     });
@@ -180,7 +180,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'full has been replaced by the expand attribute.',
+        message: 'The full attribute of ion-button has been renamed. Use expand="full" instead.',
         source
       });
     });
@@ -197,7 +197,7 @@ describe(ruleName, () => {
 
       assertAnnotated({
         ruleName,
-        message: 'block has been replaced by the expand attribute.',
+        message: 'The block attribute of ion-button has been renamed. Use expand="block" instead.',
         source
       });
     });
