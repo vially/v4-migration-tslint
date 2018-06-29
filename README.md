@@ -26,16 +26,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "@ionic/v4-migration-tslint/rules"
       ],
       "rules": {
-        "ion-action-sheet-method-create-parameters-renamed": true,
-        "ion-alert-method-create-parameters-renamed": true,
-        "ion-button-is-now-an-element": true,
-        "ion-button-attributes-renamed": true,
-        "ion-chip-markup-has-changed": true,
-        "ion-navbar-is-now-ion-toolbar": true,
-        "ion-tab-title-is-now-label": true,
-        "ion-tab-icon-is-now-icon": true,
-        "ion-tab-badge-is-now-badge": true,
-        "ion-tab-badge-style-is-now-badge-style": true
+        ...
       }
     }
     ```
@@ -429,41 +420,14 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
   </tr>
   <tr>
-    <th rowspan="4">
+    <th>
       <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#tabs">Tabs</a>
     </th>
     <td>:wrench:</td>
     <td>:white_check_mark:</td>
     <td>
-      <code>ion-tab-badge-is-now-badge</code></td>
+      <code>ion-tab-attributes-renamed</code></td>
     <td>
-      <a href="https://github.com/cwoolum">@cwoolum</a>
-    </td>
-  </tr>
-  <tr>
-    <td>:wrench:</td>
-    <td>:white_check_mark:</td>
-    <td>
-      <code>ion-tab-badge-style-is-now-badge-style</code></td>
-      <td>
-      <a href="https://github.com/cwoolum">@cwoolum</a>
-    </td>
-  </tr>
-  <tr>
-    <td>:wrench:</td>
-    <td>:white_check_mark:</td>
-    <td>
-      <code>ion-tab-icon-is-now-icon</code></td>
-      <td>
-      <a href="https://github.com/cwoolum">@cwoolum</a>
-    </td>
-  </tr>
-  <tr>
-    <td>:wrench:</td>
-    <td>:white_check_mark:</td>
-    <td>
-      <code>ion-tab-title-is-now-label</code></td>
-      <td>
       <a href="https://github.com/cwoolum">@cwoolum</a>
     </td>
   </tr>

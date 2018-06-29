@@ -4,29 +4,17 @@ import * as ts from 'typescript';
 
 import { createAttributesRenamedTemplateVisitorClass } from './helpers/attributesRenamed';
 
-export const ruleName = 'ion-button-attributes-renamed';
+export const ruleName = 'ion-tab-attributes-renamed';
 
-const replacementMap = new Map([
-  ['icon-left', 'slot="start"'],
-  ['icon-start', 'slot="start"'],
-  ['icon-right', 'slot="end"'],
-  ['icon-end', 'slot="end"'],
-  ['small', 'size="small"'],
-  ['large', 'size="large"'],
-  ['clear', 'fill="clear"'],
-  ['outline', 'fill="outline"'],
-  ['solid', 'fill="solid"'],
-  ['full', 'expand="full"'],
-  ['block', 'expand="block"']
-]);
+const replacementMap = new Map([['tabTitle', 'label'], ['tabIcon', 'icon'], ['tabBadge', 'badge'], ['tabBadgeStyle', 'badgeStyle']]);
 
-const IonButtonAttributesAreRenamedTemplateVisitor = createAttributesRenamedTemplateVisitorClass('ion-button', replacementMap);
+const IonButtonAttributesAreRenamedTemplateVisitor = createAttributesRenamedTemplateVisitorClass('ion-tab', replacementMap);
 
 export class Rule extends Lint.Rules.AbstractRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
-    description: 'Attributes of ion-button have been renamed.',
+    description: 'Attributes of ion-tab have been renamed.',
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: false,
