@@ -269,14 +269,6 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
   </tr>
   <tr>
-    <td></td>
-    <td>:white_large_square:</td>
-    <td>
-      <code>ion-item-detail-is-now-single-property</code>
-    </td>
-    <td></td>
-  </tr>
-  <tr>
     <th>
       <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item-divider">Item Divider</a>
     </th>
@@ -404,7 +396,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-select-property-select-options-renamed</code>
+      <code>ion-select-attributes-renamed</code>
     </td>
     <td></td>
   </tr>
@@ -415,7 +407,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-spinner-name-changed</code>
+      <code>ion-spinner-attribute-values-changed</code>
     </td>
     <td></td>
   </tr>
