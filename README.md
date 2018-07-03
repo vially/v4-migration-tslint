@@ -47,11 +47,10 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     npx tslint -c ionic-migration.json -p tsconfig.json
     ```
 
-1. Attempt automatic fixes with `--fix` (note: not all rules have fixes):
+    :memo: **Hints**:
 
-    ```
-    npx tslint -c ionic-migration.json -p tsconfig.json --fix
-    ```
+    * Run tslint with `-t verbose` to output the rule names of lint errors which correspond to the [table of rules](#rules) below.
+    * Run tslint with `--fix` to attempt automatic fixes (_note_: not all rules have fixes):
 
 ## Rules
 
