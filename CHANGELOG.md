@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.2.0...v1.3.0) (2018-07-03)
+
+
+### Bug Fixes
+
+* correct readme for nonexistent rule ([54d6e74](https://github.com/ionic-team/v4-migration-tslint/commit/54d6e74))
+* **rules:** fix colliding rules  ([#23](https://github.com/ionic-team/v4-migration-tslint/issues/23)) ([81038d3](https://github.com/ionic-team/v4-migration-tslint/commit/81038d3))
+
+
+### Features
+
+* **rules:** add ion-radio-attributes-renamed rule ([#24](https://github.com/ionic-team/v4-migration-tslint/issues/24)) ([c1890fd](https://github.com/ionic-team/v4-migration-tslint/commit/c1890fd))
+* **rules:** add ion-radio-slot-required rule ([#25](https://github.com/ionic-team/v4-migration-tslint/issues/25)) ([92ade8f](https://github.com/ionic-team/v4-migration-tslint/commit/92ade8f))
+
 # [1.2.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.1.0...v1.2.0) (2018-06-29)
 
 
