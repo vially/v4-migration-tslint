@@ -314,6 +314,17 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
   </tr>
   <tr>
     <th>
+      <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#label">Label</a>
+    </th>
+    <td></td>
+    <td>:white_large_square:</td>
+    <td>
+      <code>ion-label-attributes-renamed</code>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>
       <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#list-header">List Header</a>
     </th>
     <td></td>
