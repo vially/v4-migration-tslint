@@ -24,6 +24,16 @@ describe(ruleName, () => {
         `;
       assertSuccess(ruleName, source);
     });
+
+    it('should work with proper style for ion-loading', () => {
+      let source = `
+      @Component({
+        template: \`<ion-loading name="lines"></ion-loading>\`
+      })
+      class Bar{}
+        `;
+      assertSuccess(ruleName, source);
+    });
   });
 
   describe('failure', () => {
@@ -57,6 +67,23 @@ describe(ruleName, () => {
       assertAnnotated({
         ruleName,
         message: 'The name="ios-small" attribute/value of ion-spinner should be written as name="lines-small".',
+        source
+      });
+    });
+
+    it('should fail when name="ios" is used on ion-loading', () => {
+      let source = `
+      @Component({
+        template: \`
+          <ion-loading name="ios"></ion-loading>\`
+                       ~~~~~~~~~~
+      })
+      class Bar{}
+          `;
+
+      assertAnnotated({
+        ruleName,
+        message: 'The name="ios" attribute/value of ion-loading should be written as name="lines".',
         source
       });
     });
@@ -128,6 +155,42 @@ describe(ruleName, () => {
         @Component({
           template: \`
             <ion-spinner name="lines-small"></ion-spinner>\`
+        })
+        class Bar {}
+      `;
+
+      expect(res).to.eq(expected);
+    });
+
+    it('should replace name="ios" with name="lines" for ion-loading', () => {
+      let source = `
+        @Component({
+          template: \`
+            <ion-loading name="ios"></ion-loading>\`
+        })
+        class Bar {}
+      `;
+
+      const fail = {
+        message: 'The name="ios" attribute/value of ion-loading should be written as name="lines".',
+        startPosition: {
+          line: 3,
+          character: 25
+        },
+        endPosition: {
+          line: 3,
+          character: 35
+        }
+      };
+
+      const failures = assertFailure(ruleName, source, fail);
+      const fixes = failures.map(f => f.getFix());
+      const res = Replacement.applyAll(source, Utils.flatMap(fixes, Utils.arrayify));
+
+      let expected = `
+        @Component({
+          template: \`
+            <ion-loading name="lines"></ion-loading>\`
         })
         class Bar {}
       `;

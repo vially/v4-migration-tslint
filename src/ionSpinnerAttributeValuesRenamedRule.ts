@@ -7,14 +7,15 @@ import { createAttributeValuesRenamedTemplateVisitorClass } from './helpers/attr
 export const ruleName = 'ion-spinner-attribute-values-renamed';
 
 const replacementMap = new Map([['name', new Map([['ios', 'lines'], ['ios-small', 'lines-small']])]]);
+const affectedElements = ['ion-spinner', 'ion-loading', 'ion-infinite-scroll', 'ion-refresher'];
 
-const IonSpinnerAttributeValuesRenamedTemplateVisitor = createAttributeValuesRenamedTemplateVisitorClass('ion-spinner', replacementMap);
+const TemplateVisitor = createAttributeValuesRenamedTemplateVisitorClass(affectedElements, replacementMap);
 
 export class Rule extends Lint.Rules.AbstractRule {
   public static metadata: Lint.IRuleMetadata = {
     ruleName: ruleName,
     type: 'functionality',
-    description: 'Attribute values of ion-spinner have been renamed.',
+    description: `Attribute values of ${affectedElements.join(', ')} have been renamed.`,
     options: null,
     optionsDescription: 'Not configurable.',
     typescriptOnly: false,
@@ -24,7 +25,7 @@ export class Rule extends Lint.Rules.AbstractRule {
   public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
     return this.applyWithWalker(
       new NgWalker(sourceFile, this.getOptions(), {
-        templateVisitorCtrl: IonSpinnerAttributeValuesRenamedTemplateVisitor
+        templateVisitorCtrl: TemplateVisitor
       })
     );
   }
