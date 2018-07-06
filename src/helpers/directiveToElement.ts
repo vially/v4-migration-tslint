@@ -17,7 +17,7 @@ export function createDirectiveToElementTemplateVisitorClass(directive: string, 
         const start = foundAttr.sourceSpan.start.offset;
         const absolutePosition = this.getSourcePosition(start - 1);
 
-        this.addFailure(this.createFailure(start, directive.length, generateDescription(directive, resultantElement)));
+        this.addFailureAt(start, directive.length, generateDescription(directive, resultantElement));
       }
 
       super.visitElement(element, context);
