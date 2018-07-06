@@ -318,13 +318,13 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <th>
       <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#item-options">Item Options</a>
     </th>
-    <td></td>
-    <td>:white_large_square:</td>
+    <td>:wrench:</td>
+    <td>:white_check_mark:</td>
     <td>
-      <code>ion-item-options-attributes-renamed</code>
+      <code>ion-item-options-attribute-values-renamed</code>
     </td>
     <td>
-      <a href="https://github.com/mhartington">@mhartington</a>
+      <a href="https://github.com/dwieeb">@dwieeb</a>
     </td>
   </tr>
   <tr>
