@@ -308,7 +308,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-item-divider-ion-label-is-now-required</code>
+      <code>ion-item-divider-ion-label-required</code>
     </td>
     <td></td>
   </tr>
@@ -356,7 +356,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     <td></td>
     <td>:white_large_square:</td>
     <td>
-      <code>ion-list-header-ion-label-is-now-required</code>
+      <code>ion-list-header-ion-label-required</code>
     </td>
     <td></td>
   </tr>
