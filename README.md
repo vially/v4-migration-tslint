@@ -71,7 +71,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     :memo: **Hints**:
 
     * Run tslint with `-t verbose` to output the rule names of lint errors which correspond to the [table of rules](#rules) below.
-    * Run tslint with `--fix` to attempt automatic fixes (_note_: not all rules have fixes):
+    * Run tslint with `--fix` to attempt automatic fixes (_note_: not all rules have fixes, and be sure to save a backup in version control before running with `--fix`)
 
 ## Rules
 
