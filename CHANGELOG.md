@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.4.0...v1.5.0) (2018-07-31)
+
+
+### Bug Fixes
+
+* **packages:** move codelyzer and tslint to dependencies ([#45](https://github.com/ionic-team/v4-migration-tslint/issues/45)) ([3ea86a3](https://github.com/ionic-team/v4-migration-tslint/commit/3ea86a3)), closes [#44](https://github.com/ionic-team/v4-migration-tslint/issues/44)
+
+
+### Features
+
+* **rules:** create/present should use await rule ([#40](https://github.com/ionic-team/v4-migration-tslint/issues/40)) ([c39a8cd](https://github.com/ionic-team/v4-migration-tslint/commit/c39a8cd)), closes [#39](https://github.com/ionic-team/v4-migration-tslint/issues/39)
+
 # [1.4.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.3.0...v1.4.0) (2018-07-24)
 
 
