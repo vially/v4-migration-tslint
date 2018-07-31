@@ -32,6 +32,7 @@ jobs:
   test:
     <<: *defaults
     steps:
+      - checkout
       - attach_workspace:
           at: /tmp/workspace
       - run: mkdir junit
@@ -54,6 +55,10 @@ jobs:
       GIT_COMMITTER_NAME: Ionitron
       GIT_COMMITTER_EMAIL: hi@ionicframework.com
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "fc:0c:f5:89:bf:37:42:27:a5:c5:f0:96:0d:93:9c:3e" # ionitron user key
+      - checkout
       - attach_workspace:
           at: /tmp/workspace
       - run: npx semantic-release
