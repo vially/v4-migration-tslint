@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/ionic-team/v4-migration-tslint/compare/v1.5.0...v1.5.1) (2018-09-04)
+
+
+### Bug Fixes
+
+* **dependencies:** Update codelyzer to fix template mangling ([#49](https://github.com/ionic-team/v4-migration-tslint/issues/49)) ([630f8b2](https://github.com/ionic-team/v4-migration-tslint/commit/630f8b2)), closes [#47](https://github.com/ionic-team/v4-migration-tslint/issues/47)
+
 # [1.5.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.4.0...v1.5.0) (2018-07-31)
 
 

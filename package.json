@@ -1,6 +1,6 @@
 {
   "name": "@ionic/v4-migration-tslint",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "TSLint rules for Ionic Angular v4 Migration",
   "main": "rules/index.js",
   "scripts": {
