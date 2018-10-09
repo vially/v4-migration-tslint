@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/ionic-team/v4-migration-tslint/compare/v1.5.1...v1.6.0) (2018-10-09)
+
+
+### Bug Fixes
+
+* **rules:** support .then() in ion-overlay-method-*-should-use-await rule ([#62](https://github.com/ionic-team/v4-migration-tslint/issues/62)) ([7318565](https://github.com/ionic-team/v4-migration-tslint/commit/7318565))
+
+
+### Features
+
+* **rules:** add fixer for directive-is-now-an-element rules ([#58](https://github.com/ionic-team/v4-migration-tslint/issues/58)) ([126b4f3](https://github.com/ionic-team/v4-migration-tslint/commit/126b4f3))
+
 ## [1.5.1](https://github.com/ionic-team/v4-migration-tslint/compare/v1.5.0...v1.5.1) (2018-09-04)
 
 
