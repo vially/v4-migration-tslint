@@ -215,7 +215,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
       <code>ion-button-is-now-an-element</code>
     </td>
     <td>
-      <a href="https://github.com/cwoolum">@cwoolum</a>
+      <a href="https://github.com/cwoolum">@cwoolum</a>,
+      <a href="https://github.com/j3gb3rt">@j3gb3rt</a>
     </td>
   </tr>
   <tr>
@@ -241,7 +242,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
       <code>ion-fab-button-is-now-an-element</code>
     </td>
     <td>
-      <a href="https://github.com/dwieeb">@dwieeb</a>
+      <a href="https://github.com/dwieeb">@dwieeb</a>,
+      <a href="https://github.com/j3gb3rt">@j3gb3rt</a>
     </td>
   </tr>
   <tr>
@@ -300,7 +302,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
       <code>ion-item-is-now-an-element</code>
     </td>
     <td>
-      <a href="https://github.com/dwieeb">@dwieeb</a>
+      <a href="https://github.com/dwieeb">@dwieeb</a>,
+      <a href="https://github.com/j3gb3rt">@j3gb3rt</a>
     </td>
   </tr>
   <tr>
@@ -456,7 +459,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
       <code>ion-radio-group-is-now-an-element</code>
     </td>
     <td>
-      <a href="https://github.com/dwieeb">@dwieeb</a>
+      <a href="https://github.com/dwieeb">@dwieeb</a>,
+      <a href="https://github.com/j3gb3rt">@j3gb3rt</a>
     </td>
   </tr>
   <tr>
@@ -518,7 +522,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
       <code>ion-text-is-now-an-element</code>
     </td>
     <td>
-      <a href="https://github.com/dwieeb">@dwieeb</a>
+      <a href="https://github.com/dwieeb">@dwieeb</a>,
+      <a href="https://github.com/j3gb3rt">@j3gb3rt</a>
     </td>
   </tr>
   <tr>
