@@ -28,6 +28,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "ion-alert-method-create-parameters-renamed": true,
         "ion-datetime-capitalization-changed": true,
         "ion-item-option-method-get-sliding-percent-renamed": true,
+        "ion-loading-method-create-parameters-renamed": true,
         "ion-overlay-method-create-should-use-await": true,
         "ion-overlay-method-present-should-use-await": true,
         "ion-back-button-not-added-by-default": { "options": [true], "severity": "warning" },
@@ -70,8 +71,8 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
 
     :memo: **Hints**:
 
-    * Run tslint with `-t verbose` to output the rule names of lint errors which correspond to the [table of rules](#rules) below.
-    * Run tslint with `--fix` to attempt automatic fixes (_note_: not all rules have fixes, and be sure to save a backup in version control before running with `--fix`)
+    - Run tslint with `-t verbose` to output the rule names of lint errors which correspond to the [table of rules](#rules) below.
+    - Run tslint with `--fix` to attempt automatic fixes (_note_: not all rules have fixes, and be sure to save a backup in version control before running with `--fix`)
 
 ## Rules
 
@@ -136,6 +137,19 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
     </td>
     <td>
        <a href="https://github.com/mhartington">@mhartington</a>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#loading">Loading</a>
+    </th>
+    <td>:wrench:</td>
+    <td>:white_check_mark:</td>
+    <td>
+      <code>ion-loading-method-create-parameters-renamed</code>
+    </td>
+    <td>
+       <a href="https://github.com/areo">@areo</a>
     </td>
   </tr>
   <tr>
@@ -545,10 +559,10 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
 
 Some changes are not covered by this fixer due to their complexity or because it would make no sense to do in automated fashion. They are:
 
-* [Colors](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#colors)
-* [Dynamic Mode](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#dynamic-mode)
-* [Icon &raquo; Fonts Removed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#icon)
-* [Theming](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#theming)
+- [Colors](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#colors)
+- [Dynamic Mode](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#dynamic-mode)
+- [Icon &raquo; Fonts Removed](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#icon)
+- [Theming](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#theming)
 
 [circle-badge]: https://circleci.com/gh/ionic-team/v4-migration-tslint.svg?style=shield
 [circle-badge-url]: https://circleci.com/gh/ionic-team/v4-migration-tslint
