@@ -29,6 +29,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "ion-datetime-capitalization-changed": true,
         "ion-item-option-method-get-sliding-percent-renamed": true,
         "ion-loading-method-create-parameters-renamed": true,
+        "ion-overlay-method-create-arguments-changed": true,
         "ion-overlay-method-create-should-use-await": true,
         "ion-overlay-method-present-should-use-await": true,
         "ion-back-button-not-added-by-default": { "options": [true], "severity": "warning" },
@@ -173,6 +174,17 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
       <code>ion-option-class-renamed</code>
     </td>
     <td></td>
+  </tr>
+  <tr>
+    <th rowspan="2">
+      <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#modal">Modal</a>
+    </th>
+    <td></td>
+    <td>:white_check_mark:</td>
+    <td>
+      <code>ion-overlay-method-create-arguments-changed</code>
+    </td>
+    <td><a href="https://github.com/areo">@areo</a></td>
   </tr>
   <tr>
     <th rowspan="2">
