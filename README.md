@@ -32,6 +32,7 @@ We are looking for contributors to help build these rules out! See [`CONTRIBUTIN
         "ion-overlay-method-create-arguments-changed": true,
         "ion-overlay-method-create-should-use-await": true,
         "ion-overlay-method-present-should-use-await": true,
+        "ion-page-module-removed": true,
         "ion-back-button-not-added-by-default": { "options": [true], "severity": "warning" },
         "ion-button-attributes-renamed": true,
         "ion-button-is-now-an-element": true,
