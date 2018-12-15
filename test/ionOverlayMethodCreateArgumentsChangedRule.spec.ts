@@ -125,7 +125,7 @@ describe(ruleName, () => {
               `);
         });
 
-        it('should replace three arguments', () => {
+        it('should replace three arguments (non object-literal options)', () => {
           let source = `
           class DoSomething{
             constructor(private poorlyNamedController: ${controller}){}
@@ -159,6 +159,123 @@ describe(ruleName, () => {
 
             doWork(){
               this.poorlyNamedController.create({component: MyComponent, componentProps: someParams, ...someOptions});
+            }
+          }
+              `);
+        });
+
+        it('should replace three arguments (object-literal options)', () => {
+          let source = `
+          class DoSomething{
+            constructor(private poorlyNamedController: ${controller}){}
+
+            doWork(){
+              this.poorlyNamedController.create(MyComponent, someParams, {foo: 'bar'});
+            }
+          }
+              `;
+
+          const failures = assertFailures(ruleName, source, [
+            {
+              message: 'The create method of overlay controllers now accepts only one argument.',
+              startPosition: {
+                line: 5,
+                character: 48
+              },
+              endPosition: {
+                line: 5,
+                character: 85
+              }
+            }
+          ]);
+
+          const fixes = failures.map(f => f.getFix());
+          const res = Replacement.applyAll(source, Utils.flatMap(fixes, Utils.arrayify));
+
+          expect(res).to.eq(`
+          class DoSomething{
+            constructor(private poorlyNamedController: ${controller}){}
+
+            doWork(){
+              this.poorlyNamedController.create({component: MyComponent, componentProps: someParams, foo: 'bar'});
+            }
+          }
+              `);
+        });
+
+        it('should replace changed options (property assignment)', () => {
+          let source = `
+          class DoSomething{
+            constructor(private poorlyNamedController: ${controller}){}
+
+            doWork(){
+              this.poorlyNamedController.create(MyComponent, someParams, {enableBackdropDismiss: false});
+            }
+          }
+              `;
+
+          const failures = assertFailures(ruleName, source, [
+            {
+              message: 'The create method of overlay controllers now accepts only one argument.',
+              startPosition: {
+                line: 5,
+                character: 48
+              },
+              endPosition: {
+                line: 5,
+                character: 103
+              }
+            }
+          ]);
+
+          const fixes = failures.map(f => f.getFix());
+          const res = Replacement.applyAll(source, Utils.flatMap(fixes, Utils.arrayify));
+
+          expect(res).to.eq(`
+          class DoSomething{
+            constructor(private poorlyNamedController: ${controller}){}
+
+            doWork(){
+              this.poorlyNamedController.create({component: MyComponent, componentProps: someParams, backdropDismiss: false});
+            }
+          }
+              `);
+        });
+
+        it('should replace changed options (shorthand property assignment)', () => {
+          let source = `
+          class DoSomething{
+            constructor(private overlayController: ${controller}){}
+
+            doWork(){
+              this.overlayController.create(MyComponent, someParams, {enableBackdropDismiss});
+            }
+          }
+              `;
+
+          const failures = assertFailures(ruleName, source, [
+            {
+              message: 'The create method of overlay controllers now accepts only one argument.',
+              startPosition: {
+                line: 5,
+                character: 44
+              },
+              endPosition: {
+                line: 5,
+                character: 92
+              }
+            }
+          ]);
+
+          const fixes = failures.map(f => f.getFix());
+          const res = Replacement.applyAll(source, Utils.flatMap(fixes, Utils.arrayify));
+
+          expect(res).to.eq(`
+          class DoSomething{
+            constructor(private overlayController: ${controller}){}
+
+            doWork(){
+              this.overlayController.create({component: MyComponent, componentProps: someParams, backdropDismiss: enableBackdropDismiss});
             }
           }
               `);

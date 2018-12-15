@@ -6,6 +6,7 @@ export const ruleName = 'ion-overlay-method-create-arguments-changed';
 export const ruleMessage = `The create method of overlay controllers now accepts only one argument.`;
 
 const matchingControllers = ['ModalController', 'PopoverController'];
+const optionsMap = { enableBackdropDismiss: 'backdropDismiss' };
 
 class CreateMethodArgumentsChangedWalker extends Lint.RuleWalker {
   visitCallExpression(node: ts.CallExpression) {
@@ -19,7 +20,11 @@ class CreateMethodArgumentsChangedWalker extends Lint.RuleWalker {
           replacements.push(`componentProps: ${node.arguments[1].getText()}`);
         }
         if (node.arguments.length >= 3) {
-          replacements.push(`...${node.arguments[2].getText()}`);
+          const optionsArgument = node.arguments[2];
+          const replacementText = tsutils.isObjectLiteralExpression(optionsArgument)
+            ? optionsArgument.properties.map(mapOptionProperty).join(', ')
+            : `...${node.arguments[2].getText()}`;
+          replacements.push(replacementText);
         }
 
         const replacementText = `{${replacements.join(', ')}}`;
@@ -34,6 +39,17 @@ class CreateMethodArgumentsChangedWalker extends Lint.RuleWalker {
 
     super.visitCallExpression(node);
   }
+}
+
+function mapOptionProperty(property: ts.ObjectLiteralElementLike): string {
+  const propertyName = tsutils.getPropertyName(property.name);
+  if (!(propertyName in optionsMap) || (!tsutils.isShorthandPropertyAssignment(property) && !tsutils.isPropertyAssignment(property))) {
+    return property.getFullText();
+  }
+
+  const replacementPropName = optionsMap[propertyName];
+  const propValue = tsutils.isShorthandPropertyAssignment(property) ? propertyName : property.initializer.getText();
+  return `${replacementPropName}: ${propValue}`;
 }
 
 export class Rule extends Lint.Rules.AbstractRule {
