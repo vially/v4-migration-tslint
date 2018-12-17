@@ -9,21 +9,28 @@ export function generateDescription(directive: string, resultantElement: string)
 }
 export type ReplacementLevel = 'parent' | 'same' | 'child';
 
-export function createDirectiveToElementTemplateVisitorClass(directive: string, resultantElement: string, level: ReplacementLevel) {
+export function createDirectiveToElementTemplateVisitorClass(
+  directive: string,
+  resultantElement: string,
+  level: ReplacementLevel,
+  resultantAttribute?: string
+) {
   return class extends BasicTemplateAstVisitor {
     visitElement(element: ast.ElementAst, context: any): any {
       const foundAttr = element.attrs.find(attr => attr.name === directive);
 
       if (foundAttr) {
+        const shouldApplyValueFix = !!resultantAttribute && foundAttr.value;
         const attributeStart = foundAttr.sourceSpan.start.offset;
-        const attributeLength = directive.length;
+        const attributeLength = shouldApplyValueFix ? foundAttr.sourceSpan.toString().length : directive.length;
         const attributePosition = this.getSourcePosition(attributeStart);
 
         const fixes = [Lint.Replacement.deleteFromTo(attributePosition - 1, attributePosition + attributeLength)];
 
         switch (level) {
           case 'parent':
-            const parentOpenTag = `<${resultantElement}>\n`;
+            const valueAttribute = shouldApplyValueFix ? ` ${resultantAttribute}="${foundAttr.value}"` : '';
+            const parentOpenTag = `<${resultantElement}${valueAttribute}>\n`;
             const parentCloseTag = `\n</${resultantElement}>`;
 
             const angleBracketStartPosition = this.getSourcePosition(element.sourceSpan.start.offset);
@@ -70,7 +77,8 @@ export function createDirectiveToElementRuleClass(
   ruleName: string,
   directive: string,
   resultantElement = directive,
-  level: ReplacementLevel = 'same'
+  level: ReplacementLevel = 'same',
+  resultantAttribute?: string
 ) {
   return class extends Lint.Rules.AbstractRule {
     public static metadata: Lint.IRuleMetadata = {
@@ -86,7 +94,7 @@ export function createDirectiveToElementRuleClass(
     public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
       return this.applyWithWalker(
         new NgWalker(sourceFile, this.getOptions(), {
-          templateVisitorCtrl: createDirectiveToElementTemplateVisitorClass(directive, resultantElement, level)
+          templateVisitorCtrl: createDirectiveToElementTemplateVisitorClass(directive, resultantElement, level, resultantAttribute)
         })
       );
     }
